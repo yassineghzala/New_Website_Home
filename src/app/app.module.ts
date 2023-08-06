@@ -20,6 +20,7 @@ import { FamilyComponent } from './components/main/family/family.component';
 import { ContactComponent } from './components/main/contact/contact.component';
 import { FooterComponent } from './components/main/footer/footer.component';
 import { LoginPopupComponent } from './login-popup/login-popup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,8 @@ import { LoginPopupComponent } from './login-popup/login-popup.component';
     MatIconModule,
     MatListModule,
     MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
     
   ],
   providers: [],

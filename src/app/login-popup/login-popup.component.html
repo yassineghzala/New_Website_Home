@@ -1,6 +1,6 @@
-<div class="login_container">
+<!--<div class="login_container">
     <h1 class="login_title">Login</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="login()" class="login_form">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" method="post" class="login_form">
         <label for="">Username</label>
         <input class="login_form_input" formControlName="username" type="text" name="" id="" placeholder="your username">
         <label for="">Password</label>
@@ -9,4 +9,35 @@
             <button type="submit" class="submit_button">Login</button>
         </div>
     </form>
-</div>
+</div>-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="">
+            <h2>Login</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="login()" class="d-flex justify-content-center flex-column" >
+              <div>
+                <p>Username</p>
+                <input type="text" formControlName="username" id="email" placeholder="Type your username">
+                <!-- JUST FOR PRACTICE -->
+                <div id="wrong-email"></div>
+                <!-- JUST FOR PRACTICE -->
+              </div>
+              <div>
+                <p>Password</p>
+                <input type="password" id="password" formControlName="password"  placeholder="Type your password">
+                <!-- JUST FOR PRACTICE -->
+                <div id="wrong-pass"></div>
+                <!-- JUST FOR PRACTICE -->
+              </div>
+              <button type="submit">Login</button>
+              <div class="d-flex justify-content-center pt-5 ">
+                <a href="" class="yassin ">Report a problem</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

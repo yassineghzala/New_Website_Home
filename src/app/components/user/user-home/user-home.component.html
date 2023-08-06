@@ -1,0 +1,131 @@
+<main>
+    <div class="d-flex justify-content-center ">
+        <section>
+            <div class="d-flex justify-content-center ">
+                <h1 id="overview">Overview</h1>
+            </div>
+            <div class="d-flex justify-content-around m">
+                <div *ngIf="currentUser!=undefined">
+                    <button style="border:none;background-color: transparent;" data-bs-toggle="modal"
+                        data-bs-target="#modal-points">
+                        <div class="card-user d-flex flex-column justify-content-center points">
+                            <img src="assets/ressource/icons/coins.png" alt="" class="icon-article">
+                            <h2>{{this.score}}</h2>
+                            <h3>Points</h3>
+                        </div>
+                    </button>
+                </div>
+                <div *ngIf="activeAssignments!=undefined">
+                    <a routerLink="todolist" class="card-user d-flex flex-column justify-content-center to-do-list">
+                        <img src="assets/ressource/icons/todolist.png" alt="" class="icon-article">
+                        <h2>{{this.activeAssignments.length}}</h2>
+                        <h3>To do list</h3>
+                    </a>
+                </div>
+                <div *ngIf="activeEvents!=undefined">
+                    <a routerLink="events" class="card-user d-flex flex-column justify-content-center events ">
+                        <img src="assets/ressource/icons/event.png" alt="" class="icon-article">
+                        <h2>{{activeEvents.length}}</h2>
+                        <h3>Up coming events</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- <div class="modal fade" id="modal-points" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Points History</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body-2 p-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Assignment</th>
+                            <th scope="col">Points Gained</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let s of lastScores">
+                            <td>{{s.assignmentTitle}} Post</td>
+                            <td>{{s.score}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.instagram.com/isetch_google_club/" target="_blank" class="btn btn-secondary">Report
+                    a problem</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<div class="d-flex justify-content-center">
+    <section class="d-flex justify-content-around under-main m">
+
+        <div class="leader d-flex justify-content-center flex-column ">
+            <h2 style="text-align:center;margin-bottom: 30px;">Leaderboard</h2>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Month Score</th>
+                        <th scope="col">Total Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{members[0].fullname}}</td>
+                        <td>{{members[0].mscore}}</td>
+                        <td>{{members[0].score}}</td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{members[1].fullname}}</td>
+                        <td>{{members[1].mscore}}</td>
+                        <td>{{members[1].score}}</td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{members[2].fullname}}</td>
+                        <td>{{members[2].mscore}}</td>
+                        <td>{{members[2].score}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a routerLink="leaderboard" class="btn btn-dark">See more</a>
+        </div>
+        <div class="free d-flex justify-content-center flex-column ">
+            <h2>Claim free content !</h2>
+            <div class="content d-flex justify-content-around m">
+                <article id="free-1" class="free-article">
+                    <h3>Harvard CS50 Web</h3>
+                    <a href="https://pll.harvard.edu/course/cs50s-introduction-game-development?delta=0"
+                        target="_blank">Claim</a>
+                </article>
+                <article id="free-2" class="free-article">
+                    <h3>Harvard CS50 Game Dev</h3>
+                    <a href="https://pll.harvard.edu/course/cs50s-introduction-game-development?delta=0"
+                        target="_blank">Claim</a>
+                </article>
+                <article id="free-3" class="free-article">
+                    <h3>Harvard CS50 Python</h3>
+                    <a href="https://pll.harvard.edu/course/cs50s-introduction-game-development?delta=0"
+                        target="_blank">Claim</a>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>

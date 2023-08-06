@@ -1,0 +1,55 @@
+<div class=" cardBox">
+    <div class="card1" *ngIf="tasks!=undefined">
+        <div>
+            <div class="numbers" id="Task">
+                {{tasks.length}}
+            </div>
+            <div class="cardName">Total Tasks </div>
+        </div>
+
+        <div class="iconBx">
+            <i class="bi bi-file-earmark-text-fill" style="font-size: 45px;"></i>
+        </div>
+    </div>
+    <div class="card1">
+        <div>
+            <div class="numbers">100</div>
+            <div class="cardName">Daily Views</div>
+        </div>
+
+        <div class="iconBx">
+            <span class="icond">
+                <i class="bi bi-eye-fill"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="card1" *ngIf="members!=undefined">
+        <div>
+            <div class="numbers">{{members.length}}</div>
+            <div class="cardName">total number of members</div>
+        </div>
+
+        <div class="iconBx">
+            <i class="bi bi-person-fill"></i>
+        </div>
+    </div>
+    <div class="changeContrib">
+        <h2>Change Contribution </h2>
+        <input type="text" name="" id="new-amount" placeholder="New Amount" required>
+        <input type="text" name="" id="new-reason" placeholder="Reason" required>
+        <button class="done-change">Change</button>
+    </div>
+    <div class="card1 contrib-card">
+        <div>
+
+            <div class="numbers total-amount">150</div>
+            <div class="cardName">Contribution</div>
+        </div>
+
+
+        <div class="iconBx">
+            <i class="bi bi-cash-stack"></i>
+        </div>
+    </div>
+</div>

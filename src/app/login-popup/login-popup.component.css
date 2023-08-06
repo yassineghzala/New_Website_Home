@@ -1,0 +1,40 @@
+.login_container{
+    padding:25px;
+    width:350px;
+    height:550px;
+    max-height:auto;
+    background-color:rgb(26, 23, 23);
+    color:white;
+    border-radius:5px;
+    border-top: 4px solid #b31412;
+    border-left: 4px solid #137333;
+    border-bottom: 4px solid #fbbc04;
+    border-right: 4px solid #1a5bbc;
+}
+.login_title{
+    text-align:center;
+    margin-bottom:20px;
+}
+.login_form{
+    padding:25px;
+}
+.login_form_input{
+    margin:25px;
+    padding:5px;
+    border:none;
+    border-bottom:2px solid black;
+    border-radius:4px;
+    background-color:rgb(26, 23, 23);
+}
+.submit_button{
+    padding:6px;
+    border:none;
+    width:125px;
+    border-radius:4px;
+    background-color:#34a853;
+    color:white;
+}
+.center_button{
+    display:flex;
+    justify-content: center;
+}

@@ -1,0 +1,18 @@
+<nav class="navbar fixed-top nav-user ">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="home">
+            <a class="navbar-brand" routerLink="../" style="margin-top:2px;"><img src="assets/images/isetlogo.png" alt=""
+                    class="logo"></a>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            style="background-color: var(--mainBlue);padding:10px;width:120px;color: white;font-weight: 600;">
+            <span class=" ">
+                Profile
+            </span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <app-profile *ngIf="currentUser!=undefined" [currentUser]="currentUser"></app-profile>
+        </div>
+    </div>
+</nav>

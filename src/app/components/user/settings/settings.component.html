@@ -1,34 +1,67 @@
-<!-- <section>
-    <div class="effect">
-    </div>
-    <div class="d-flex justify-content-center ">
-        <div class="settings d-flex justify-content-center align-items-center m">
-            <div class="">
-                <div *ngIf="currentUser!=undefined" class="setting-general">
-                    <img src="assets/ressource/user.jpg" alt="" class="user-profile">
-                    <h2>{{currentUser.name}}</h2>
-                    <h3>{{currentUser.role}}</h3>
-                    <p>Points : {{currentUser.score}}</p>
+<app-user-header *ngIf="connectedUser!=undefined" [currentUser]="connectedUser"></app-user-header>
+<section class="settings_container">
+    <div class="settings">
+        <div *ngIf="currentUser!=undefined" class="settings_member">
+            <img src="" alt="img" class="user-profile">
+            <h2>{{currentUser.name}}</h2>
+            <h3>{{currentUser.role}}</h3>
+            <p>Points : {{currentUser.score}}</p>
+        </div>
+        <div *ngIf="currentUser!=undefined" class="form_container">
+            <form class="settings_form" [formGroup]="settingsForm" (ngSubmit)="editProfile()" method="post">
+                <div class="form_part">
+                    <div class="input_and_label">
+                        <label for="">Name</label>
+                        <input type="text" formControlName="name" placeholder="Change your name">
+                    </div>
+                    <div class="input_and_label">
+                        <label for="">username</label>
+                        <input type="text" formControlName="username" placeholder="Change your forname">
+                    </div>
                 </div>
+                <div class="form_part">
+                    <div class="input_and_label">
+                        <label for="">Email</label>
+                        <input type="email" formControlName="mail" placeholder="Change your Email">
+                    </div>
+                    <div class="input_and_label">
+                        <label for="">Password</label>
+                        <input type="text" formControlName="password" placeholder="Change your password">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!--<section>
+    <div class="effect"></div>
+    <div class="d-flex justify-content-center ">
+        <div class="settings  m">
+            <div *ngIf="currentUser!=undefined" class="setting-general">
+                <img src="" alt="img" class="user-profile">
+                <h2>{{currentUser.name}}</h2>
+                <h3>{{currentUser.role}}</h3>
+                <p>Points : {{currentUser.score}}</p>
             </div>
             <div *ngIf="currentUser!=undefined" class="settings-form">
                 <form [formGroup]="settingsForm" (ngSubmit)="editProfile()" method="post">
                     <div class="d-flex m">
-                        <div>
+                        <div class="input_and_label">
                             <label for="">Name</label>
                             <input type="text" formControlName="name" placeholder="Change your name">
                         </div>
-                        <div>
+                        <div class="input_and_label">
                             <label for="">username</label>
                             <input type="text" formControlName="username" placeholder="Change your forname">
                         </div>
                     </div>
                     <div class="d-flex m">
-                        <div>
+                        <div class="input_and_label">
                             <label for="">Email</label>
                             <input type="email" formControlName="mail" placeholder="Change your Email">
                         </div>
-                        <div>
+                        <div class="input_and_label">
                             <label for="">Password</label>
                             <input type="text" formControlName="password" placeholder="Change your password">
                         </div>
@@ -42,4 +75,4 @@
 
         </div>
     </div>
-</section> -->
+</section>-->

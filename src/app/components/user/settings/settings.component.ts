@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Member } from 'src/app/models/member';
 import { User } from 'src/app/models/user';
+import { MemberService } from 'src/app/services/member.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,30 +12,35 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent {
-  // settingsForm!:FormGroup
-  // newSettings!:any
-  // currentUser!:User
-  // constructor(private formBuilder:FormBuilder,private uservice:UsersService,private active:ActivatedRoute){}
-  // ngOnInit(){
-  //   this.settingsForm=this.formBuilder.group({
-  //     name:[""],
-  //     username:[""],
-  //     mail:[""],
-  //     password:[""]
-  //   })
-  //   const id=this.active.snapshot.params["id"]
-  //   this.uservice.getUserById(id).subscribe((res)=>{
-  //     this.currentUser=res[0]
-  //   })
-  // }
-  // editProfile(){
-  //   this.newSettings=this.settingsForm.value;
-  //   this.currentUser.name=this.newSettings.name
-  //   this.currentUser.username=this.newSettings.username
-  //   this.currentUser.mail=this.newSettings.mail
-  //   this.currentUser.password=this.newSettings.password
-  //   this.uservice.updateUser(this.currentUser).subscribe(()=>{
-  //     console.log("completed");
-  //   })
-  // }
+settingsForm!:FormGroup
+  newSettings!:any
+  currentUser!:Member
+  connectedUser!: Member;
+  constructor(private mservice:MemberService,private formBuilder:FormBuilder,private uservice:UsersService,private active:ActivatedRoute){}
+ngOnInit(){
+  this.settingsForm=this.formBuilder.group({
+    name:[""],
+    username:[""],
+    mail:[""],
+    password:[""]
+  })
+  const id=this.active.snapshot.params["id"]
+  this.uservice.getUserById(id).subscribe((res)=>{
+    this.currentUser=res[0]
+  })
+  const connectedUserId=this.active.snapshot.params['id'];
+  this.mservice.getMemberById(connectedUserId).subscribe((res)=>{
+    this.connectedUser=res[0]
+    console.log("f west=",this.connectedUser)
+  })
+}
+editProfile(){
+  this.newSettings=this.settingsForm.value;
+  this.currentUser.name=this.newSettings.name
+  this.currentUser.username=this.newSettings.username
+  this.currentUser.mail=this.newSettings.mail
+  this.currentUser.password=this.newSettings.password
+}
+
+
 }

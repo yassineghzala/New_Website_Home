@@ -6,7 +6,7 @@ export class Member extends User{
     public override username!:string;
     public override password!:string;
     public override role!:string
-    public mail:string;
+    
     public score:number;
     public birthday:string;
     public cin:number;

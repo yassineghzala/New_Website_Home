@@ -1,0 +1,14 @@
+<section class="assignment" *ngFor="let a of assignments" ><!--*ngFor="let a of assignments"-->
+    <img src="../../../../assets/images/article.png" alt="" class="todo_img" style="height:200px;border-radius:12px ;">
+    <div class="todo_info">
+        <h1 >Create {{a.title}} Post</h1>
+        <h3>{{a.description}}</h3>
+        <div class="d-flex justify-content-around m" style="margin-top: 40px;">
+            <h6 >Deadline : {{a.ddl}}</h6>
+            <h6>{{a.score}} Point</h6>
+        </div>
+        <div class="d-flex justify-content-center m " style="margin-top: 20px;">
+            <a routerLink="assignments/{{a.id}}" class="btn btn-success">More Details</a>
+        </div>
+    </div>
+</section>

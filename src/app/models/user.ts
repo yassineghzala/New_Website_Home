@@ -4,6 +4,8 @@ export class User {
     public username:string;
     public password:string;
     public role:string
+  name: any;
+  mail: any;
     constructor(id:number,fullname:string,username:string,password:string,role:string){
         this.id=id
         this.fullname=fullname;

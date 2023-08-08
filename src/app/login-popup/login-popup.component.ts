@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup } from '@angular/forms';
+
 import { Router } from '@angular/router';
 import { UsersService } from '../services/users.service';
+import { FormGroup,FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login-popup',
   templateUrl: './login-popup.component.html',
   styleUrls: ['./login-popup.component.css']
 })
+
 export class LoginPopupComponent implements OnInit {
   loginForm!:FormGroup
   loginUser!:any
   constructor(private FormBuilder:FormBuilder,private Uservices:UsersService,private route:Router){}
-
-
 
 
   ngOnInit() {
@@ -45,4 +45,6 @@ export class LoginPopupComponent implements OnInit {
     })
   }
 
+
+  
 }

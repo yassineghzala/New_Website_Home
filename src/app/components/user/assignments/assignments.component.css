@@ -3,3 +3,96 @@
     height: 50px;
     border-radius: 10px;
 }
+.assi-details {
+    width:80%;
+    min-height: 400px;
+    background-image: url(../../../../assets/images/assign-effect.png);
+    background-size:cover;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.501);
+    margin-bottom: 100px;
+}
+.assi-details div h6 {
+    font-size: 20px;
+    margin-top: 80px;
+    color: #b31412;
+}
+.assi-details div h6 + h6 {
+    color: #ea8600;
+}
+.drag-area{
+    border: 2px dashed #4285f4;
+    height: 500px;
+    width: 700px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #4285f4;
+    margin-bottom: 100px;
+}
+.drag-area.active{
+    border: 2px solid #fff;
+}
+.drag-area .icon{
+    font-size: 100px;
+    color: #fff;
+}
+.drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #4285f4;
+    margin-bottom: 50px;
+}
+.drag-area button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #4285f4;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.read-more {
+    background-color: #ea4335;
+    padding:10px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+.read-more:hover {
+    scale: 1.06;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.464);
+}
+@media screen and (max-width:425px){
+    #work{
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+    }
+}

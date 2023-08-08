@@ -5,11 +5,11 @@ import { AssignmentService } from 'src/app/services/assignment.service';
 import { MemberService } from 'src/app/services/member.service';
 
 @Component({
-  selector: 'app-todolist',
-  templateUrl: './todolist.component.html',
-  styleUrls: ['./todolist.component.css']
+  selector: 'app-assignment',
+  templateUrl: './assignment.component.html',
+  styleUrls: ['./assignment.component.css']
 })
-export class TodolistComponent {
+export class AssignmentComponent {
   constructor(private aservice:AssignmentService,private active:ActivatedRoute,private mservice:MemberService){}
   connectedUser!: Member;
   assignments!:any

@@ -45,7 +45,6 @@ import { RegisterComponent } from './components/main/register/register.component
 import { SettingsComponent } from './components/user/settings/settings.component';
 import { AssignmentsComponent } from './components/user/assignments/assignments.component';
 import { UserComponent } from './components/user/user/user.component';
-import { LoginComponent } from './components/main/login/login.component';
 import { MainComponent } from './main/main.component';
 import { AssignmentComponent } from './components/user/todolist/assignment/assignment/assignment.component';
 
@@ -63,8 +62,6 @@ import { AssignmentComponent } from './components/user/todolist/assignment/assig
     FooterComponent,
     LoginPopupComponent,
     AdminNavComponent,
-    AddMemberComponent,
-    AdminHeaderComponent,
     AdminSignOutComponent,
     CardsComponent,
     MemberDetailsComponent,
@@ -76,32 +73,16 @@ import { AssignmentComponent } from './components/user/todolist/assignment/assig
     UserHeaderComponent,
     EventsComponent,
     UserFooterComponent,
-    LeaderboardComponent,
     UserHomeComponent,
-
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    LoginComponent,
-    HomeComponent,
-    AboutComponent,
-    DepartmentsComponent,
-    NewsComponent,
-    FamilyComponent,
-    ContactComponent,
     UserHomeComponent,
     UserComponent,
     UserFooterComponent,
     UserHeaderComponent,
-    EventsComponent,
     AssignmentsComponent,
     LeaderboardComponent,
-    SettingsComponent,
     TodolistComponent,
     ProfileComponent,
     RegisterComponent,
-    AdminMainComponent,
-    AdminNavComponent,
     ScoreCardComponent,
     AddMemberComponent,
     MemberDetailsComponent,
@@ -113,6 +94,7 @@ import { AssignmentComponent } from './components/user/todolist/assignment/assig
     TasksComponent,
     MainComponent,
     AssignmentComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

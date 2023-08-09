@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { UsersService } from '../services/users.service';
 import { FormGroup,FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterComponent } from '../components/main/register/register.component';
 
 @Component({
   selector: 'app-login-popup',
@@ -13,9 +15,10 @@ import { FormGroup,FormBuilder } from '@angular/forms';
 export class LoginPopupComponent implements OnInit {
   loginForm!:FormGroup
   loginUser!:any
-  constructor(private FormBuilder:FormBuilder,private Uservices:UsersService,private route:Router){}
+  constructor(private FormBuilder:FormBuilder,private Uservices:UsersService,private route:Router,private dialogRef: MatDialog){}
 
 
+  
   ngOnInit() {
     this.loginForm=this.FormBuilder.group({
       username:[""],
@@ -44,7 +47,8 @@ export class LoginPopupComponent implements OnInit {
       }
     })
   }
-
-
+  openRegisterPopup(){
+    this.dialogRef.open(RegisterComponent);
+  }
   
 }

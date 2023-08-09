@@ -8,11 +8,8 @@ import { LoginPopupComponent } from 'src/app/login-popup/login-popup.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
-  constructor(private dialogRef : MatDialog){}
-
-  openLoginPopUp(){
+  constructor(private dialogRef: MatDialog){}
+  openLoginPopup(){
     this.dialogRef.open(LoginPopupComponent);
   }
-  
 }

@@ -1,0 +1,14 @@
+.shared_component{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px;
+    margin:50px 0 0 0 ;
+    width:90vw;
+    height:100px;
+    background-color: #E8E8E8;
+}
+.component_image{
+    height:120px;
+    width:120px;
+}

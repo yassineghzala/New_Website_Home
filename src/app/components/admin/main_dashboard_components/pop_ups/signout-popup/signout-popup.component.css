@@ -1,0 +1,10 @@
+.signout_popup{
+    background-color:#E8E8E8;
+    width:450px;
+    height:150px;
+}
+.signout_buttons_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

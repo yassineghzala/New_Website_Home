@@ -1,0 +1,95 @@
+.toolbarstyle{
+    background-image: linear-gradient(30deg, #b31412, #1a5bbc);
+}
+.title, .menu_button{
+    color:white;
+}
+.sidenav{
+    width:250px;
+    background-color:#E8E8E8;
+}
+.sidebar_item{
+    display:flex;
+    align-items: center;
+}
+.signout_button{
+    margin-top:50px;
+}
+.title_and_logo{
+    display:flex;
+    align-items: center;
+}
+.sidebar_icon{
+    margin-right:25px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 16rem 1fr 24rem;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "info_cards info_cards info_cards"
+    "recent_tasks recent_tasks leaderboard"
+    "members members members";
+    min-height: 100vh;
+}
+.info_cards{
+    grid-area: info_cards;
+    padding:3rem;
+    background-color:#E8E8E8;
+}
+.recent_tasks{
+    grid-area: recent_tasks;
+    padding:2rem;
+    background-color:#E8E8E8;
+}
+.leaderboard{
+    grid-area: leaderboard;
+    padding:2rem;
+    background-color:#E8E8E8;
+    display:flex;
+    justify-content: center;
+}
+.members{
+    grid-area: members;
+    padding:2rem;
+    background-color:#E8E8E8;
+}
+.addmember_button{
+    margin: 7px 0 7px 0;
+    padding:10px;
+    width:100px;
+    border-radius: 3px;
+    border:none;
+    color:white;
+    background-color:#155ecd;
+}
+.info_cards_container{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.members_container{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-height:auto;
+    background-color:#E8E8E8;
+}
+@media screen and (max-width: 1024px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "info_cards "
+        "leaderboard "
+        "recent_tasks "
+        "members ";
+    }
+    .info_cards_container{
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+    }
+}

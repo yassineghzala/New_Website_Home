@@ -7,9 +7,12 @@ import { LeaderboardComponent } from './components/user/leaderboard/leaderboard.
 import { AssignmentsComponent } from './components/user/assignments/assignments.component';
 import { SettingsComponent } from './components/user/settings/settings.component';
 import { LoggedInGuard } from './guard/logged-in.guard';
-import { AdminMainComponent } from './components/admin/admin-main/admin-main.component';
+
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './components/main/main/main.component';
+import { DashboardComponent } from './components/admin/fix/navbar/dashboard.component';
+import { ContentComponent } from './components/admin/fix/content/content.component';
+import { AlltasksComponent } from './components/admin/fix/alltasks/alltasks.component';
 
 
 
@@ -21,8 +24,12 @@ const routes: Routes = [
   {path:"user/:id/events",component:EventsComponent,canActivate:[LoggedInGuard]},
   {path:"user/:id/leaderboard",component:LeaderboardComponent,canActivate:[LoggedInGuard]},
   {path:"user/:id/settings",component:SettingsComponent,canActivate:[LoggedInGuard]},
-  {path:"admin/:id",component:AdminMainComponent,canActivate:[LoggedInGuard]},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'content', component: ContentComponent },
+  { path: 'tasks', component: AlltasksComponent },
+  { path: 'events', component: EventsComponent },
 ];
 
 @NgModule({

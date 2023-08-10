@@ -6,3 +6,130 @@ body{
     background-color: #E8E8E8;
 }
 html, body { height: 100%; }
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family:"Poppins", sans-serif;
+    margin:0px;
+    padding:0px;
+    background-color: #E8E8E8;  
+}
+html, body { height: 100%; }
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+}
+.titles{
+    padding:15px;
+    color:#185ABC;
+}
+.logo{
+    width:40px;
+    height:40px;
+    margin-left:15px;
+}
+.single_button{
+    margin: 7px 0 7px 0;
+    padding:6px;
+    width:100px;
+    color:white;
+    background-color:#1165e4;
+    border:none;
+    border-radius: 3px;
+}
+.title, .menu_button{
+    color:white;
+}
+.sidenav{
+    width:250px;
+    background-color:#E8E8E8;
+}
+.sidebar_item, .title_and_logo{
+    display:flex;
+    align-items: center;
+}
+.signout_button{
+    margin-top:50px;
+}
+.sidebar_icon{
+    margin-right:25px;
+}
+.content_container_area{
+    display:grid;
+    grid-template-columns: auto ;
+    grid-template-rows: 10rem auto ;
+    grid-template-areas: 
+    "add_button_area"
+    "content_area";
+    min-height: 100vh;
+}
+.add_button_area {
+    grid-area: add_button_area;
+    padding:2rem;
+}
+.content_area{
+    grid-area: content_area;
+    padding:2rem;
+}
+.button_container, .center_button{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.button_container{
+    margin: 100px 0 0 0;
+}
+.component_label{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px;
+    margin:50px 0px 0  -45px ;
+    width:90vw;
+    height:100px;
+    background-color: #E8E8E8;
+
+    /*display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px;
+    margin:25px 25px 0 0 ;
+    width:90vw;
+    height:100px;
+    background-color: #E8E8E8;*/
+}
+.component_buttons, .component_actions{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.component_actions{
+    padding-right:25px
+}
+.main_popup{
+    background-color:#E8E8E8;
+    min-width:400px;
+    max-width:auto;
+    min-height:300px;
+    max-height:auto;
+}
+.popup_table{
+    height:65%;
+    width:100%;
+    padding:20px;
+    margin:0 0 0 0;
+}
+.popup_textarea{
+    height:150px;
+    width:90%;
+}
+.center_button{
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 425px){
+    .single_button{
+        width:90px;
+    }
+}

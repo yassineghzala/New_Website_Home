@@ -8,15 +8,6 @@ body{
 html, body { height: 100%; }
 /* You can add global styles to this file, and also import other style files */
 body{
-    font-family:"Poppins", sans-serif;
-    margin:0px;
-    padding:0px;
-    background-color: #E8E8E8;  
-}
-html, body { height: 100%; }
-body{
-    margin:0;
-    padding:0;
     height:100vh;
 }
 .titles{
@@ -29,13 +20,17 @@ body{
     margin-left:15px;
 }
 .single_button{
-    margin: 7px 0 7px 0;
-    padding:6px;
+    margin: 3px 0 3px 0;
+    padding:3px;
     width:100px;
     color:white;
     background-color:#1165e4;
     border:none;
+    font-size:13px;
     border-radius: 3px;
+}
+.popup_button{
+    margin-top:15px;
 }
 .title, .menu_button{
     color:white;
@@ -54,55 +49,17 @@ body{
 .sidebar_icon{
     margin-right:25px;
 }
-.content_container_area{
-    display:grid;
-    grid-template-columns: auto ;
-    grid-template-rows: 10rem auto ;
-    grid-template-areas: 
-    "add_button_area"
-    "content_area";
-    min-height: 100vh;
-}
-.add_button_area {
-    grid-area: add_button_area;
-    padding:2rem;
-}
-.content_area{
-    grid-area: content_area;
-    padding:2rem;
-}
-.button_container, .center_button{
+.center_button{
     display:flex;
     flex-direction:column;
     align-items: center;
     justify-content: center;
 }
-.button_container{
-    margin: 100px 0 0 0;
-}
-.component_label{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:15px;
-    margin:50px 0px 0  -45px ;
-    width:90vw;
-    height:100px;
-    background-color: #E8E8E8;
-
-    /*display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:15px;
-    margin:25px 25px 0 0 ;
-    width:90vw;
-    height:100px;
-    background-color: #E8E8E8;*/
-}
-.component_buttons, .component_actions{
+.component_buttons{
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space;
+    
 }
 .component_actions{
     padding-right:25px
@@ -113,23 +70,143 @@ body{
     max-width:auto;
     min-height:300px;
     max-height:auto;
+    padding:25px;
 }
 .popup_table{
-    height:65%;
-    width:100%;
+    height:30%;
+    width:auto;
     padding:20px;
-    margin:0 0 0 0;
+}
+.mat-mdc-dialog-container .mdc-dialog__surface{
+    width:300px;
 }
 .popup_textarea{
     height:150px;
-    width:90%;
+    width:200px;
 }
 .center_button{
     display: flex;
     justify-content: center;
 }
-@media screen and (max-width: 425px){
+
+.shared_popup_title{
+    font-size:30px;
+    padding:10px;
+}
+.shared_popup_body{
+    height:450px;
+    width:300px;
+    padding:25px;
+    background-color:#E8E8E8;
+    scroll-behavior: none;
+}
+.shared_form_parts, .shared_form_parts_wtextarea{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.shared_form_parts{
+    height:60px;
+}
+.shared_form_parts_wtextarea{
+    height:120px;
+}
+.shared_form_button{
+    margin-top:20px;
+}
+
+
+.pages_content{
+    display:grid;
+    grid-template-columns: auto ;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "button_area"
+    "label_area"
+    "compoenet_area"
+    ;
+    height:100vh;
+    background-color:#E8E8E8;
+}
+.button_area{
+    grid-area: button_area;
+    padding:2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-width:90vw;
+    max-width:auto;
+}
+.component_label_area{
+    grid-area: label_area;
+}
+.component_label_area h2{
+    font-size:20px;
+    padding:20px;
+    margin-left:15px;
+    
+}
+.compoenent_area{
+    grid-area: component_area;
+    padding:7rem;
+
+    min-width:90vw;
+    max-width:auto;
+}
+.close_icon{
+    margin-top:-105px;
+    margin-right:-25px;
+}
+.popup_header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.popup_header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 320px){
+    .component_label_area h2{
+        font-size:15px;
+        padding:10px;
+        margin-left:15px;
+        
+    }
+}
+
+@media screen and (max-width: 426px){
     .single_button{
-        width:90px;
+        width:50px;
+    }
+    .mat-drawer-content{
+        display:inline;
+    }
+    .component_label_area{
+        grid-area: label_area;
+        display:flex;
+        justify-content: space-between;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        min-width:90vw;
+        max-width:auto;
+    }
+    .component_label_area h2{
+        font-size:15px;
+        padding:10px;
+        margin-left:15px;
+        
+    }
+}
+@media screen and (max-width: 1444px){
+    .mat-drawer-content{
+        display:inline;
+    }
+}
+@media screen and (max-width: 1025px){
+    .mat-drawer-content{
+        display:inline;
     }
 }

@@ -55,6 +55,9 @@ import { ModifyPopupComponent } from './components/admin/fix/shared_components/s
 import { DetailsPopupComponent } from './components/admin/fix/shared_components/shared_popups/details-popup/details-popup.component';
 import { MemberCardComponent } from './components/admin/fix/navbar/members/member-card/member-card.component';
 import { AddMemberPopupComponent } from './components/admin/fix/navbar/members/add-member-popup/add-member-popup.component';
+import { EventsadminComponent } from './components/admin/fix/events/events/eventsadmin.component';
+import { SharedComponentLabelComponent } from './components/admin/fix/shared_components/shared-component-label/shared-component-label.component';
+import { AnimationTypewriterComponent } from './components/main/home/animation/animation-typewriter.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,6 @@ import { AddMemberPopupComponent } from './components/admin/fix/navbar/members/a
     LoginPopupComponent,
 
     UserHeaderComponent,
-    EventsComponent,
     UserFooterComponent,
     UserHomeComponent,
     UserHomeComponent,
@@ -105,7 +107,10 @@ import { AddMemberPopupComponent } from './components/admin/fix/navbar/members/a
     DetailsPopupComponent,
     MemberCardComponent,
     EventsComponent,
+    EventsadminComponent,
     AddMemberPopupComponent,
+    SharedComponentLabelComponent,
+    AnimationTypewriterComponent,
   ],
   imports: [
     BrowserModule,

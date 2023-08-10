@@ -31,11 +31,19 @@
     "recent_tasks recent_tasks leaderboard"
     "members members members";
     min-height: 100vh;
+    width:90%;
+    margin:0px;
+    padding:0px;
+}
+.mat-drawer-container{
+    display:inline;
+    
 }
 .info_cards{
     grid-area: info_cards;
     padding:3rem;
     background-color:#E8E8E8;
+    width:98vw;
 }
 .recent_tasks{
     grid-area: recent_tasks;
@@ -93,3 +101,12 @@
         justify-content: space-around;
     }
 }
+
+@media screen and (max-width: 321px){
+    .info_cards{
+
+        margin-left:30px;
+    }
+}
+
+

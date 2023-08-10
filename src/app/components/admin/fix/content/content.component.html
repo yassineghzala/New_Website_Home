@@ -57,19 +57,12 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="content_container_area">
-            <div class="add_button_area button_container">
-                <button class="single_button" (click)="openAddPopup();">Add Content</button>
-                <div class="component_label">
-                    <h2>Test Name</h2>
-                    <h2>Date</h2>
-                    <h2>Image</h2>
-                    <div class="component_buttons">
-                        <h2 >Actions</h2>
-                    </div>
-                </div>
+        <div class="pages_content">
+            <div class="button_area">
+                <button class="single_button" (click)="openAddPopup();">Add Event</button>
             </div>
-            <div class="content_area content_container">
+            <app-shared-component-label class="component_label_area"></app-shared-component-label>
+            <div class="content_area">
                 <app-shared-component></app-shared-component>
                 <app-shared-component></app-shared-component>
             </div>

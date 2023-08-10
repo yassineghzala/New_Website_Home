@@ -7,11 +7,11 @@ import { ScorecardPopupComponent } from '../../../main_dashboard_components/pop_
 import { SignoutPopupComponent } from '../../../main_dashboard_components/pop_ups/signout-popup/signout-popup.component';
 
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+  selector: 'app-eventsadmin',
+  templateUrl: './eventsadmin.component.html',
+  styleUrls: ['./eventsadmin.component.css']
 })
-export class EventsComponent {
+export class EventsadminComponent {
   constructor(private dialogRef: MatDialog){
 
   }

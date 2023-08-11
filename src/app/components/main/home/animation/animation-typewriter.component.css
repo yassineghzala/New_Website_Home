@@ -28,3 +28,9 @@
 #typewriterbox {
     display: inline-block;
 }
+
+@media screen and (max-width:426px){
+    .typewriter h2{
+        font-size:12px;
+    }
+}

@@ -1,5 +1,8 @@
 <div class="shared_popup_body">
-    <h2 class="shared_popup_title">Modify</h2>
+    <div class="popup_header">
+        <h2 class="shared_popup_title">Modify</h2>
+        <mat-icon class="close_icon" mat-button [mat-dialog-close]="true" style="margin-top:-80px;">close</mat-icon>
+    </div>
     <form action="" >
         <div class="shared_form_parts">
             <label for="">Name</label>
@@ -8,6 +11,14 @@
         <div class="shared_form_parts">
             <label for="">Date</label>
             <input type="date">
+        </div>
+        <div class="shared_form_parts">
+            <label for="">Departement</label>
+            <select id="Dep" name="Departement">
+                <option value="Dev">Dev</option>
+                <option value="Media">Media</option>
+                <option value="Both">Both</option>
+            </select>
         </div>
         <div class="shared_form_parts">
             <label for="">Image</label>

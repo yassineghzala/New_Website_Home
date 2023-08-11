@@ -6,6 +6,8 @@ import { PasswordPopupComponent } from '../../main_dashboard_components/password
 import { ScorecardPopupComponent } from '../../main_dashboard_components/pop_ups/scorecard-popup/scorecard-popup.component';
 import { SignoutPopupComponent } from '../../main_dashboard_components/pop_ups/signout-popup/signout-popup.component';
 
+
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',

@@ -56,15 +56,27 @@
             </a>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="pages_content">
-            <div class="button_area">
-                <button class="single_button" (click)="openAddPopup();">Add Event</button>
+    <mat-sidenav-content style="background-color:#E8E8E8;">
+        <div class="content_page">
+            <div class="search_content">
+                <h5>Search for Content</h5>
+                <div class="search_part">
+                    <label for="Dev">Dev</label>
+                    <input type="checkbox" name="Dev" id="">
+                </div>
+                <div class="search_part">
+                    <label for="Media">Media</label>
+                    <input type="checkbox" name="Media" id="">
+                </div>
+                <div class="search_part">
+                    <label for="Both">Both</label>
+                    <input type="checkbox" name="Both" id="">
+                </div>
             </div>
-            <app-shared-component-label class="component_label_area"></app-shared-component-label>
-            <div class="content_area">
-                <app-shared-component></app-shared-component>
-                <app-shared-component></app-shared-component>
+            <div class="content_container">
+                <h5>Content</h5>
+                <app-single-component></app-single-component>
+                <app-single-component></app-single-component>
             </div>
         </div>
     </mat-sidenav-content>

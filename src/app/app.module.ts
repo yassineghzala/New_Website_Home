@@ -59,6 +59,7 @@ import { EventsadminComponent } from './components/admin/fix/events/events/event
 import { SharedComponentLabelComponent } from './components/admin/fix/shared_components/shared-component-label/shared-component-label.component';
 import { AnimationTypewriterComponent } from './components/main/home/animation/animation-typewriter.component';
 import { SingleComponentComponent } from './components/admin/fix/content/single-component/single-component.component';
+import { ApplicationComponent } from './components/application/application.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { SingleComponentComponent } from './components/admin/fix/content/single-
     SharedComponentLabelComponent,
     AnimationTypewriterComponent,
     SingleComponentComponent,
+    ApplicationComponent,
   ],
   imports: [
     BrowserModule,

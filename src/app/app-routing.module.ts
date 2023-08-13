@@ -14,6 +14,7 @@ import { DashboardComponent } from './components/admin/fix/navbar/dashboard.comp
 import { ContentComponent } from './components/admin/fix/content/content.component';
 import { AlltasksComponent } from './components/admin/fix/alltasks/alltasks.component';
 import { EventsadminComponent } from './components/admin/fix/events/events/eventsadmin.component';
+import { ApplicationComponent } from './components/application/application.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'content', component: ContentComponent },
   { path: 'tasks', component: AlltasksComponent },
   { path: 'events', component: EventsadminComponent },
+  { path: 'application', component: ApplicationComponent},
 ];
 
 @NgModule({

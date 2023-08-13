@@ -13,6 +13,12 @@
     color:white;
     font-weight:normal;
     margin:0 10px 0 10px;
+    padding:15px;
+    transition:all 0.5s
+}
+.header_text:hover{
+    transform: translateY(-10px);
+    transition:all 0.5s
 }
 .header_button{
     border:none;

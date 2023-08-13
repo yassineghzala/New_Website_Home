@@ -5,10 +5,10 @@
             <h2 class="login_title">Login</h2>
             <form  class="login_form" [formGroup]="loginForm" (ngSubmit)="login()" >
             <div>
-                <p>Username</p>
+                <label for="">Username</label>
                 <input type="text" formControlName="username" id="email" placeholder="Type your username">
                 <div id="wrong-email"></div>
-                <p>Password</p>
+                <label for="">Password</label>
                 <input type="password" id="password" formControlName="password"  placeholder="Type your password">
                 <div id="wrong-pass"></div>
             </div>

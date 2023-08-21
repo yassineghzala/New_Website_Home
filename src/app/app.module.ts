@@ -60,6 +60,7 @@ import { SharedComponentLabelComponent } from './components/admin/fix/shared_com
 import { AnimationTypewriterComponent } from './components/main/home/animation/animation-typewriter.component';
 import { SingleComponentComponent } from './components/admin/fix/content/single-component/single-component.component';
 import { ApplicationComponent } from './components/application/application.component';
+import { PointsPopupComponent } from './components/user/user-home/points/points-popup/points-popup.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +116,7 @@ import { ApplicationComponent } from './components/application/application.compo
     AnimationTypewriterComponent,
     SingleComponentComponent,
     ApplicationComponent,
+    PointsPopupComponent,
   ],
   imports: [
     BrowserModule,

@@ -278,6 +278,9 @@ article h3 {
     }
 }
 @media screen and (max-width:426px){
+    .home_title{
+        font-size:35px;
+    }
     .points{
         display:flex;
         justify-content: center;

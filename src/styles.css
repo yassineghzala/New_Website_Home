@@ -270,7 +270,7 @@ body{
 
 @media screen and (max-width: 426px){
     .single_button{
-        width:50px;
+        width:75px;
     }
     .mat-drawer-content{
         display:inline;

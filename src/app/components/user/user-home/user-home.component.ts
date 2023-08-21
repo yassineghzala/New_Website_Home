@@ -4,6 +4,9 @@ import { AssignmentService } from 'src/app/services/assignment.service';
 import { EventService } from 'src/app/services/event.service';
 import { HsService } from 'src/app/services/hs.service';
 import { MemberService } from 'src/app/services/member.service';
+import { PasswordPopupComponent } from '../../admin/main_dashboard_components/password-popup/password-popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { PointsPopupComponent } from './points/points-popup/points-popup.component';
 
 
 
@@ -19,8 +22,9 @@ export class UserHomeComponent {
   activeAssignments:any
   activeEvents:any
   score!:number 
-   constructor(private mservice:MemberService,private hsservice:HsService,private aservice:AssignmentService,private eservice:EventService){}
-   ngOnInit(){
+
+  constructor(private dialogRef: MatDialog,private mservice:MemberService,private hsservice:HsService,private aservice:AssignmentService,private eservice:EventService){}
+  ngOnInit(){
     console.log("current",this.currentUser);
     this.score=this.currentUser.score
     this.mservice.getAllMembers().subscribe((res)=>{
@@ -39,14 +43,14 @@ export class UserHomeComponent {
     this.aservice.getActiveAssignments().subscribe((res)=>{
       this.activeAssignments=res
       console.log("active",this.activeAssignments);
-     })
+    })
     this.eservice.getActiveEvents().subscribe((res)=>{
       this.activeEvents=res
       console.log("active evvents",this.activeEvents);
       
     })
     
-   }
+  }
   tri(members:any){
     let permut=false
     do{
@@ -63,5 +67,8 @@ export class UserHomeComponent {
 
     
     return members
+  }
+  openPointspopup(){
+    this.dialogRef.open(PointsPopupComponent);
   }
 }

@@ -1,0 +1,21 @@
+.points_popup{
+    min-width:300px;
+    max-width:auto;
+    min-height:400px;
+    max-width:auto;
+    padding:25px;
+    background-color:#E8E8E8;
+}
+.points_table{
+    width:100%;
+}
+.thead_style{
+    padding:0 0 25px 0;
+}
+.tbody_style tr{
+    border-top:2px solid black;
+}
+.thead_style, .tbody_style tr{
+    display:flex;
+    justify-content: space-between;
+}

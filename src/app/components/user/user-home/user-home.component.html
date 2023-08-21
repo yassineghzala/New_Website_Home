@@ -5,7 +5,7 @@
             <div *ngIf="currentUser!=undefined" class="points">
                 <button style="border:none;background-color: transparent;" data-bs-toggle="modal"
                     data-bs-target="#modal-points">
-                    <div class="card-user points_card d-flex flex-column justify-content-center points">
+                    <div (click)="openPointspopup();" class="card-user points_card d-flex flex-column justify-content-center points">
                         <img src="../../../../assets/icons/coins.png" alt="" class="icon-article">
                         <h2>{{this.score}}</h2>
                         <h3>Points</h3>

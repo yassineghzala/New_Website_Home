@@ -1,11 +1,15 @@
 .add_member_popup{
     background-color:#E8E8E8;
-    width:auto;
+    min-width:300px;
+    max-width:auto;
     height:500px;
     padding:30px;
 }
 .add_member_table{
-    width:300px;
-    height:250px;
+    padding:25px;
+}
+.add_member_input{
+    width:110px;
+    margin:10px 0 10px 0;
 }
 

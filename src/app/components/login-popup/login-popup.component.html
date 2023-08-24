@@ -1,7 +1,6 @@
-<div  id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+<div class="popup_container" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered center_form">
-    <div class="modal-content">
-        <div class="modal-body">
+        <div class="modal-body modal-content">
             <h2 class="login_title">Login</h2>
             <form  class="login_form" [formGroup]="loginForm" (ngSubmit)="login()" >
             <div>
@@ -13,13 +12,10 @@
                 <div id="wrong-pass"></div>
             </div>
             <button type="submit" mat-button [mat-dialog-close]="true" >Login</button>
-            <p>Dont have an account ? Register.</p>
-            <button mat-button [mat-dialog-close]="true" (click)="openRegisterPopup();" style="margin-top:10px;">Register</button>
             <div class="d-flex justify-content-center pt-5 ">
                 <a href="" class="yassin ">Report a problem</a>
             </div>
             </form>
         </div>
-    </div>
     </div>
 </div>

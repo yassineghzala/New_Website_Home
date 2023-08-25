@@ -8,9 +8,7 @@ import { environment } from '../../environment';
   providedIn: 'root'
 })
 export class UsersService {
-  updateUser(currentUser: User) {
-    throw new Error('Method not implemented.');
-  }
+  
   usersUrl = environment.apiUrl+"/user"
   constructor(private bostagi: HttpClient) { }
 

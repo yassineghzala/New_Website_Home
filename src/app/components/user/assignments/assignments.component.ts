@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Assignment } from 'src/app/models/assignment.model';
+import { Assignment } from 'src/app/models/assignment';
 import { Member } from 'src/app/models/member';
 import { User } from 'src/app/models/user';
 import { AssignmentService } from 'src/app/services/assignment.service';

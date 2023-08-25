@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
+import { environment } from '../../environment'; 
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class UsersService {
   updateUser(currentUser: User) {
     throw new Error('Method not implemented.');
   }
-  usersUrl = "http://localhost:3000/user"
+  usersUrl = environment.apiUrl+"/user"
   constructor(private bostagi: HttpClient) { }
 
   getUserById(id: number):Observable<any> {

@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Member } from '../models/member';
+import { environment } from '../../environment'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemberService {
-  memberUrl="http://localhost:3000/member"
+  memberUrl=environment.apiUrl+"/member"
   constructor(private bostagi:HttpClient) { }
   getMemberById(id:number):Observable<any>{
     return this.bostagi.get<{res:Member}>(`${this.memberUrl}?id=${id}`)

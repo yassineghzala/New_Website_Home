@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Assignment } from '../models/assignment.model';
-
+import { Assignment } from '../models/assignment';
+import { environment } from '../../environment'; 
 @Injectable({
   providedIn: 'root'
 })
 export class AssignmentService {
   constructor(private bostagi:HttpClient){}
-  assignmentsUrl="http://localhost:3000/assignment"
+  assignmentsUrl=environment.apiUrl+"/assignment"
   getActiveAssignments(){
     return this.bostagi.get<{res:any}>(`${this.assignmentsUrl}?statue=${true}`)
   }

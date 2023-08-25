@@ -8,7 +8,7 @@ import { environment } from '../../environment';
 })
 export class AssignmentService {
   constructor(private bostagi:HttpClient){}
-  assignmentsUrl=environment.apiUrl+"/assignment"
+  assignmentsUrl=environment.apiUrl+"/task"
   getActiveAssignments(){
     return this.bostagi.get<{res:any}>(`${this.assignmentsUrl}?statue=${true}`)
   }

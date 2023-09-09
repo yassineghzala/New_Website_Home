@@ -27,10 +27,8 @@ export class UserHomeComponent {
   ngOnInit(){
     console.log("current",this.currentUser);
     this.score=this.currentUser.score
-    this.mservice.getAllMembers().subscribe((res)=>{
+    this.mservice.getLeaderboard().subscribe((res)=>{
       this.members=res
-      console.log("kbal tri",this.members);
-      this.members=this.tri(this.members)
       console.log("baad tri",this.members);
     })
     // this.hservice.getLastScores(this.currentUser.id).subscribe((res)=>{
@@ -50,23 +48,6 @@ export class UserHomeComponent {
       
     })
     
-  }
-  tri(members:any){
-    let permut=false
-    do{
-      permut=false
-      for(let i=0;i<members.length-1;i++){
-        if (members[i].score<members[i+1].score) {
-          let aux=members[i]
-          members[i]=members[i+1]
-          members[i+1]=aux
-          permut=true
-        }
-        }
-    }while (permut==true);
-
-    
-    return members
   }
   openPointspopup(){
     this.dialogRef.open(PointsPopupComponent);

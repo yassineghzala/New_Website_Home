@@ -15,7 +15,7 @@ export class UserComponent implements OnInit{
   ngOnInit(){
     const connectedUserId=this.active.snapshot.params['id'];
     this.mservice.getMemberById(connectedUserId).subscribe((res)=>{
-      this.connectedUser=res[0]
+      this.connectedUser=res
       console.log("f west=",this.connectedUser)
     })
   }

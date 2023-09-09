@@ -13,6 +13,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class EventsComponent {
   connectedUser!:Member
+  events!:any
   activeEvents:any
   expiredEvents:any
   constructor(private mservice:MemberService,private active:ActivatedRoute,private eservice:EventService){}
@@ -21,11 +22,12 @@ export class EventsComponent {
     this.mservice.getMemberById(Id).subscribe((res)=>{
       this.connectedUser=res[0]
     })
-    this.eservice.getActiveEvents().subscribe((res)=>{
-      this.activeEvents=res
-    })
-    this.eservice.getExpiredEvents().subscribe((res)=>{
-      this.expiredEvents=res
+    this.eservice.getAllEvents().subscribe((res)=>{
+      this.events=res
+      console.log("res",res);
+      console.log(this.events);
+      
+      
     })
   }
 }

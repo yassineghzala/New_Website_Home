@@ -15,7 +15,6 @@ export class SettingsComponent {
 settingsForm!:FormGroup
   newSettings!:any
   currentUser!:Member
-  connectedUser!: Member;
   constructor(private mservice:MemberService,private formBuilder:FormBuilder,private uservice:UsersService,private active:ActivatedRoute){}
 ngOnInit(){
   this.settingsForm=this.formBuilder.group({
@@ -24,14 +23,10 @@ ngOnInit(){
     mail:[""],
     password:[""]
   })
-  const id=this.active.snapshot.params["id"]
-  this.uservice.getUserById(id).subscribe((res)=>{
-    this.currentUser=res[0]
-  })
   const connectedUserId=this.active.snapshot.params['id'];
   this.mservice.getMemberById(connectedUserId).subscribe((res)=>{
-    this.connectedUser=res[0]
-    console.log("f west=",this.connectedUser)
+    this.currentUser=res
+    console.log("f west=",this.currentUser)
   })
 }
 editProfile(){

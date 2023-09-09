@@ -10,18 +10,19 @@ import { MemberService } from 'src/app/services/member.service';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent {
-  constructor(private aservice:AssignmentService,private active:ActivatedRoute,private mservice:MemberService){}
+  constructor(private aservice: AssignmentService, private active: ActivatedRoute, private mservice: MemberService) { }
   connectedUser!: Member;
-  assignments!:any
-  ngOnInit(){
-    this.aservice.getActiveAssignments().subscribe((res)=>{
-      this.assignments=res
-      console.log("ass",this.assignments);
+  assignments!: any
+  ngOnInit() {
+    this.aservice.getAllAssignments().subscribe((res) => {
+      this.assignments = res
+      console.log("ass", this.assignments);
+      const connectedUserId = this.active.snapshot.params['id'];
+      this.mservice.getMemberById(connectedUserId).subscribe((res: any) => {
+        this.connectedUser = res
+        console.log("f west=", this.connectedUser)
+      })
     })
-    const connectedUserId=this.active.snapshot.params['id'];
-    this.mservice.getMemberById(connectedUserId).subscribe((res:any)=>{
-      this.connectedUser=res[0]
-      console.log("f west=",this.connectedUser)
-    })
+
   }
 }

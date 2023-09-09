@@ -5,12 +5,12 @@ export class Event {
     public description:string;
     public place:string;
     public active:boolean;
-    constructor(id:number,nameE:string,dateE:string,description:string,place:string,statue:boolean){
+    constructor(id:number,nameEvent:string,dateEvent:string,description:string,place:string,active:boolean){
         this.id=id;
-        this.nameEvent=nameE;
-        this.dateEvent=dateE;
+        this.nameEvent=nameEvent;
+        this.dateEvent=dateEvent;
         this.description=description;
         this.place=place;
-        this.active=statue;
+        this.active=active;
     }
 }

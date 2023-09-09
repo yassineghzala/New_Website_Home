@@ -13,7 +13,7 @@ export class AssignmentService {
     return this.bostagi.get<{res:any}>(`${this.assignmentsUrl}?statue=${true}`)
   }
   getAssignmentById(id:number):Observable<any>{
-    return this.bostagi.get<{res:Assignment}>(`${this.assignmentsUrl}?id=${id}`)
+    return this.bostagi.get<{res:Assignment}>(`${this.assignmentsUrl}/${id}`)
   }
   getAllAssignments():Observable<any>{
     return this.bostagi.get<{res:any}>(this.assignmentsUrl)

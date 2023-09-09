@@ -16,4 +16,7 @@ export class EventService {
   getExpiredEvents():Observable<any>{
     return this.bostagi.get<{res:any}>(`${this.eventUrl}?statue=${false}`);
   }
+  getAllEvents():Observable<any>{
+    return this.bostagi.get<{res:any}>(this.eventUrl);
+  }
 }

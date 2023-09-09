@@ -105,13 +105,13 @@
     }
   ],
   "event":[
-    {
-      "id":1,
-      "nameE":"louuu",
-      "description":"aaa",
-      "dateE":"3/3/2023",
-      "place":"ariana",
-      "statue":true
-    }
+      {
+        "id":1,
+        "nameE":"louuu",
+        "description":"aaa",
+        "dateE":"3/3/2023",
+        "place":"ariana",
+        "statue":true
+      }
   ]
 }

@@ -1,12 +1,15 @@
-export class Waiting {
+import { Assignment } from "./assignment";
+import { Member } from "./member";
+
+export class Depo {
     public id:number;
-    public idMember:number;
-    public idAssignment:number;
+    public idMember:Member;
+    public task:Assignment;
     public work:string;
-    constructor(id:number,idMember:number,idAssignment:number,work:string){
+    constructor(id:number,idMember:Member,task:Assignment,work:string){
         this.id=id;
         this.idMember=idMember;
-        this.idAssignment=idAssignment;
+        this.task=task;
         this.work=work;
     }
 }

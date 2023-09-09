@@ -19,10 +19,8 @@ export class LeaderboardComponent {
     this.month=this.months[new Date().getMonth()]
     console.log("month",this.month);
     
-    this.mservice.getAllMembers().subscribe((res)=>{
+    this.mservice.getLeaderboard().subscribe((res)=>{
       this.members=res
-      console.log(this.members);
-      this.members=this.tri(this.members)
       console.log(this.members);
     })
     const connectedUserId=this.active.snapshot.params['id'];
@@ -31,22 +29,4 @@ export class LeaderboardComponent {
       console.log("f west=",this.connectedUser)
     })
   }
-  tri(users:any){
-    let permut=false
-    do{
-      permut=false
-      for(let i=0;i<users.length-1;i++){
-        if (users[i].score<users[i+1].score) {
-          let aux=users[i]
-          users[i]=users[i+1]
-          users[i+1]=aux
-          permut=true
-        }
-        }
-    }while (permut==true);
-
-    
-    return users
-  }
-
 }

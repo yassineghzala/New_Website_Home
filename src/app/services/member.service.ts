@@ -11,9 +11,13 @@ export class MemberService {
   memberUrl=environment.apiUrl+"/member"
   constructor(private bostagi:HttpClient) { }
   getMemberById(id:number):Observable<any>{
-    return this.bostagi.get<{res:Member}>(`${this.memberUrl}?id=${id}`)
+    return this.bostagi.get<{res:Member}>(`${this.memberUrl}/${id}`)
   }
   getAllMembers():Observable<any>{
     return this.bostagi.get<{res:any}>(this.memberUrl)
+  }
+
+  getLeaderboard():Observable<any>{
+    return this.bostagi.get<{res:any}>(`${this.memberUrl}/${true}`)
   }
 }

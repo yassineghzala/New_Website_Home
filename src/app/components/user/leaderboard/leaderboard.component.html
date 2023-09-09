@@ -33,15 +33,13 @@
               <tr>
                 <th scope="col"></th>
                 <th scope="col">Name</th>
-                <th scope="col">Month Score</th>
                 <th scope="col">Total Score</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let tmember of members">
                 <th scope="row"></th>
-                <td>{{tmember.fullname}}</td>
-                <td>{{tmember.mscore}}</td>
+                <td>{{tmember.name}}</td>
                 <td>{{tmember.score}}</td>
               </tr>
             </tbody>

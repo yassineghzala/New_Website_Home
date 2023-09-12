@@ -3,14 +3,17 @@
     max-width:auto;
     min-height:400px;
     max-width:auto;
-    padding:25px;
+    padding:10px;
     background-color:#E8E8E8;
 }
 .points_table{
     width:100%;
 }
 .thead_style{
-    padding:0 0 25px 0;
+    background-image: linear-gradient(20deg,#fbbc04,#ea8600);
+    border-radius:5px;
+    width:100%;
+    padding:10px 0 10px 0;
 }
 .tbody_style tr{
     border-top:2px solid black;

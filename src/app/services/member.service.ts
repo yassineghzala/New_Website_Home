@@ -16,7 +16,9 @@ export class MemberService {
   getAllMembers():Observable<any>{
     return this.bostagi.get<{res:any}>(this.memberUrl)
   }
-
+  addMember(form:Member):Observable<any>{
+    return this.bostagi.post<{res:Member}>(this.memberUrl,form)
+  }
   getLeaderboard():Observable<any>{
     return this.bostagi.get<{res:any}>(`${this.memberUrl}/${true}`)
   }

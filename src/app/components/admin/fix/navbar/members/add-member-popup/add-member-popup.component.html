@@ -3,63 +3,73 @@
         <h1 class="titles">Scorecard:</h1>
         <mat-icon class="close_icon" mat-button [mat-dialog-close]="true">close</mat-icon>
     </div>
-    <table class="add_member_table">
-        <tr class="add_member_tr">
-            <td>
-                <label for="">Full Name</label>
-            </td>
-            <td>
-                <input class="add_member_input" type="text">
-            </td>
-        </tr>
-        <tr class="add_member_tr">
-            <td>
-                <label for="">Departement</label>
-            </td>
-            <td>
-                <select name="" id="">
-                    <optgroup>
-                        <option value="">Dev</option>
-                        <option value="">Media</option>
-                        <option value="">Both</option>
-                    </optgroup>
-                </select>
-            </td>
-        </tr>
-        <tr class="add_member_tr">
-            <td>
-                <label for="">Phone</label>
-            </td>
-            <td>
-                <input class="add_member_input" type="phone">
-            </td>
-        </tr>
-        <tr class="add_member_tr">
-            <td>
-                <label for="">e-mail</label>
-            </td>
-            <td>
-                <input class="add_member_input" type="email">
-            </td>
-        </tr>
-        <tr class="add_member_tr">
-            <td>
-                <label for="">Birthday</label>
-            </td>
-            <td>
-                <input class="add_member_input" type="date">
-            </td>
-        </tr>
-        <tr class="add_member_tr">
-            <td>
-                <label for="">Photo</label>
-            </td>
-            <td>
-                <input class="add_member_input" type="file">
-            </td>
-        </tr>
-    </table>
-    <div class="center_button">
-        <button class="single_button">Add Member</button>
-    </div>
+    <form [formGroup]="newMember" th:action="@{/Member/save}" th:object="${Member}" method="post" enctype="multipart/form-data"  (ngSubmit)="addMember()">
+        <table class="add_member_table">
+            <tr class="add_member_tr">
+                <td>
+                    <label for="" >Full Name</label>
+                </td>
+                <td>
+                    <input class="add_member_input" formControlName="name" type="text">
+                </td>
+            </tr>
+            <tr class="add_member_tr">
+                <td>
+                    <label for="">CIN</label>
+                </td>
+                <td>
+                    <input class="add_member_input" formControlName="cin" type="number">
+                </td>
+            </tr>
+            <tr class="add_member_tr">
+                <td>
+                    <label for="">Departement</label>
+                </td>
+                <td>
+                    <select  name="" id="">
+                        <optgroup>
+                            <option value="">Dev</option>
+                            <option value="">Media</option>
+                            <option value="">Both</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr class="add_member_tr">
+                <td>
+                    <label for="">Phone</label>
+                </td>
+                <td>
+                    <input class="add_member_input" formControlName="phone" type="phone">
+                </td>
+            </tr>
+            <tr class="add_member_tr">
+                <td>
+                    <label for="">e-mail</label>
+                </td>
+                <td>
+                    <input class="add_member_input" formControlName="mail" type="email">
+                </td>
+            </tr>
+            <tr class="add_member_tr">
+                <td>
+                    <label for="">Birthday</label>
+                </td>
+                <td>
+                    <input class="add_member_input" formControlName="birthday" type="date">
+                </td>
+            </tr>
+            <tr class="add_member_tr">
+                <td>
+                    <label for="">Photo</label>
+                </td>
+                <td>
+                    <input class="add_member_input" formControlName="pdp" type="file">
+                </td>
+            </tr>
+        </table>
+        <div class="center_button">
+            <input type="submit" value="Add Member" class="single_button" >
+        </div>
+    </form>
 </div>

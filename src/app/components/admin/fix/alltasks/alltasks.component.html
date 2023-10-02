@@ -1,7 +1,7 @@
 <mat-toolbar class="toolbarstyle">
     <mat-toolbar-row>
         <button (click)="sidenav.toggle();" mat-icon-button>
-            <mat-icon class="menu_button" >menu</mat-icon>
+            <mat-icon class="menu_button">menu</mat-icon>
         </button>
         <div class="title_and_logo">
             <h1 class="title">Isetch Google Club</h1>
@@ -24,7 +24,7 @@
                     Dashboard
                 </div>
             </a>
-            <a mat-list-item href="events">
+            <a mat-list-item>
                 <div class="sidebar_item">
                     <mat-icon class="sidebar_icon">person</mat-icon>
                     Events
@@ -44,7 +44,7 @@
             </a>
             <a mat-list-item>
                 <div class="sidebar_item" (click)="openScorecardPopup()">
-                    <mat-icon class="sidebar_icon" >assessment</mat-icon>
+                    <mat-icon class="sidebar_icon">assessment</mat-icon>
                     Scorecard
                 </div>
             </a>
@@ -64,13 +64,22 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="pages_content">
+            <!--<div class="component_label_area">
+                <h2>Name</h2>
+                <h2>Date</h2>
+                <h2>Image</h2>
+                <div class="component_actions">
+                    <h2>Actions</h2>
+                </div>
+            </div>-->
             <div class="button_area">
-                <button class="single_button" (click)="openAddPopup();">Add Task</button>
+                <button class="single_button" (click)="openAddPopup();">Add Event</button>
             </div>
-            <div class="content_area">
-                <app-shared-component-label ></app-shared-component-label>
-                <app-shared-component></app-shared-component>
-                <app-shared-component></app-shared-component>
+            <div class="content_area" >
+                <app-shared-component-label></app-shared-component-label>
+            </div>
+            <div class="content_area" >
+                <app-shared-component ></app-shared-component>
             </div>
         </div>
     </mat-sidenav-content>

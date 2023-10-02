@@ -19,4 +19,7 @@ export class EventService {
   getAllEvents():Observable<any>{
     return this.bostagi.get<{res:any}>(this.eventUrl);
   }
+  addEvent(form:Event):Observable<any>{
+    return this.bostagi.post<{res:Event}>(this.eventUrl,form);
+  }
 }

@@ -1,4 +1,6 @@
+import { Input } from '@angular/core';
 import { Component } from '@angular/core';
+import { Member } from 'src/app/models/member';
 
 @Component({
   selector: 'app-member-card',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./member-card.component.css']
 })
 export class MemberCardComponent {
-
+  @Input() member!: Member;
+  ngOnInit(){
+    console.log("member",this.member);
+    
+  }
 }

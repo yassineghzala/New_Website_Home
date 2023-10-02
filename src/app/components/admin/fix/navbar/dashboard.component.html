@@ -76,16 +76,12 @@
             <div class="leaderboard">
                 <app-leader-board></app-leader-board>
             </div>
-            <div class="members">
+            <div class="members" *ngIf="members!=undefined">
                 <div class="center_button">
                     <button class="addmember_button" (click)="openAddMemberPopup();">Add Member</button>
                 </div>
-                <div class="members_container">
-                    <app-member-card></app-member-card>
-                    <app-member-card></app-member-card>
-                    <app-member-card></app-member-card>
-                    <app-member-card></app-member-card>
-                    <app-member-card></app-member-card>
+                <div class="members_container" *ngFor="let m of members">
+                    <app-member-card [member]="m"></app-member-card>
                 </div>
             </div>
         </div>

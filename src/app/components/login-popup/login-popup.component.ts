@@ -33,13 +33,13 @@ export class LoginPopupComponent implements OnInit {
     this.Uservices.getUserByUsername(this.loginUser.username).subscribe((res)=>{
       console.log(res);
       
-      if (this.loginUser.password==res[0].password) {
+      if (this.loginUser.password==res.password) {
         console.log("connected");
-        if (res[0].role=="admin") {
-          this.route.navigate(["admin/",res[0].id]);
+        if (res.role=="admin") {
+          this.route.navigate(["admin/",res.id]);
         }  
         else{
-          this.route.navigate(["user/",res[0].id]);
+          this.route.navigate(["user/",res.id]);
         }
       }
       else{
@@ -50,5 +50,4 @@ export class LoginPopupComponent implements OnInit {
   openRegisterPopup(){
     this.dialogRef.open(RegisterComponent);
   }
-  
 }

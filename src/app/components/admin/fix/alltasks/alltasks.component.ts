@@ -5,6 +5,7 @@ import { AddPopupComponent } from '../shared_components/shared_popups/add-popup/
 import { PasswordPopupComponent } from '../../main_dashboard_components/password-popup/password-popup.component';
 import { ScorecardPopupComponent } from '../../main_dashboard_components/pop_ups/scorecard-popup/scorecard-popup.component';
 import { SignoutPopupComponent } from '../../main_dashboard_components/pop_ups/signout-popup/signout-popup.component';
+import { AssignmentService } from 'src/app/services/assignment.service';
 
 
 @Component({
@@ -14,8 +15,12 @@ import { SignoutPopupComponent } from '../../main_dashboard_components/pop_ups/s
 })
 export class AlltasksComponent {
 
-  constructor(private dialogRef: MatDialog){
+  tasks!:any
+  constructor(private dialogRef: MatDialog,private tservice:AssignmentService){
 
+  }
+  ngOnInit(){
+    
   }
   openPasswordPopup(){
     this.dialogRef.open(PasswordPopupComponent);

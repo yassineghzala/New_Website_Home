@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeletePopupComponent } from '../shared_popups/delete-popup/delete-popup.component';
 import { ModifyPopupComponent } from '../shared_popups/modify-popup/modify-popup.component';
 import { DetailsPopupComponent } from '../shared_popups/details-popup/details-popup.component';
+import { Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-shared-component',
@@ -10,8 +12,13 @@ import { DetailsPopupComponent } from '../shared_popups/details-popup/details-po
   styleUrls: ['./shared-component.component.css']
 })
 export class SharedComponentComponent {
+  @Input() event!: any;
   constructor(private dialogRef: MatDialog){
 
+  }
+  ngOnInit(){
+    console.log("ee",this.event);
+    
   }
   openDeletePopup(){
     this.dialogRef.open(DeletePopupComponent);

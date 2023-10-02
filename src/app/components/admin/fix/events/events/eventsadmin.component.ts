@@ -5,6 +5,7 @@ import { AddPopupComponent } from '../../shared_components/shared_popups/add-pop
 import { PasswordPopupComponent } from '../../../main_dashboard_components/password-popup/password-popup.component';
 import { ScorecardPopupComponent } from '../../../main_dashboard_components/pop_ups/scorecard-popup/scorecard-popup.component';
 import { SignoutPopupComponent } from '../../../main_dashboard_components/pop_ups/signout-popup/signout-popup.component';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-eventsadmin',
@@ -12,9 +13,16 @@ import { SignoutPopupComponent } from '../../../main_dashboard_components/pop_up
   styleUrls: ['./eventsadmin.component.css']
 })
 export class EventsadminComponent {
-  constructor(private dialogRef: MatDialog){
-
+  events!:any
+  constructor(private dialogRef: MatDialog,private eservice:EventService){}
+  ngOnInit(){
+    this.eservice.getAllEvents().subscribe((res)=>{
+      this.events=res
+      console.log("events",res);
+      
+    })
   }
+  
   openPasswordPopup(){
     this.dialogRef.open(PasswordPopupComponent);
   }

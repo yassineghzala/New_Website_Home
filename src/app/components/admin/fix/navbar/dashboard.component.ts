@@ -4,6 +4,7 @@ import { AddMemberPopupComponent } from './members/add-member-popup/add-member-p
 import { PasswordPopupComponent } from '../../main_dashboard_components/password-popup/password-popup.component';
 import { ScorecardPopupComponent } from '../../main_dashboard_components/pop_ups/scorecard-popup/scorecard-popup.component';
 import { SignoutPopupComponent } from '../../main_dashboard_components/pop_ups/signout-popup/signout-popup.component';
+import { MemberService } from 'src/app/services/member.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +12,14 @@ import { SignoutPopupComponent } from '../../main_dashboard_components/pop_ups/s
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  members!:any
+  constructor(private dialogRef: MatDialog,private mservice:MemberService){
 
-  constructor(private dialogRef: MatDialog){
-
+  }
+  ngOnInit(){
+    this.mservice.getAllMembers().subscribe((res)=>{
+      this.members=res;
+    })
   }
   openPasswordPopup(){
     this.dialogRef.open(PasswordPopupComponent);

@@ -10,11 +10,12 @@ import { LoggedInGuard } from './guard/logged-in.guard';
 
 
 import { MainComponent } from './components/main/main/main.component';
-import { DashboardComponent } from './components/admin/fix/navbar/dashboard.component';
-import { ContentComponent } from './components/admin/fix/content/content.component';
-import { AlltasksComponent } from './components/admin/fix/alltasks/alltasks.component';
-import { EventsadminComponent } from './components/admin/fix/events/events/eventsadmin.component';
-import { ApplicationComponent } from './components/application/application.component';
+import { DashboardComponent } from './components/admin/components/main/dashboard/dashboard.component';
+import { ContentComponent } from './components/admin/components/content/content.component';
+import { AlltasksComponent } from './components/admin/components/alltasks/alltasks.component';
+import { EventsadminComponent } from './components/admin/components/events/events/eventsadmin.component';
+import { ApplicationComponent } from './components/accounts/application/application.component';
+
 
 
 

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { AddPopupComponent } from '../shared_components/shared_popups/add-popup/add-popup.component';
-import { PasswordPopupComponent } from '../../main_dashboard_components/password-popup/password-popup.component';
-import { ScorecardPopupComponent } from '../../main_dashboard_components/pop_ups/scorecard-popup/scorecard-popup.component';
-import { SignoutPopupComponent } from '../../main_dashboard_components/pop_ups/signout-popup/signout-popup.component';
+
 import { AssignmentService } from 'src/app/services/assignment.service';
+import { PasswordPopupComponent } from '../../popups/pop_ups/password-popup/password-popup.component';
+import { ScorecardPopupComponent } from '../../popups/pop_ups/scorecard-popup/scorecard-popup.component';
+import { SignoutPopupComponent } from '../../popups/pop_ups/signout-popup/signout-popup.component';
+import { AddPopupComponent } from '../../popups/shared_popups/add-popup/add-popup.component';
 
 
 @Component({

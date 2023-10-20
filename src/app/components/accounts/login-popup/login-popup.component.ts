@@ -1,10 +1,12 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { UsersService } from '../../services/users.service';
+
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { RegisterComponent } from '../main/register/register.component';
+import { UsersService } from 'src/app/services/users.service';
+import { RegisterComponent } from '../register/register.component';
+
 
 @Component({
   selector: 'app-login-popup',

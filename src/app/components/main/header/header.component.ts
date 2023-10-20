@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginPopupComponent } from 'src/app/components/login-popup/login-popup.component';
+import { LoginPopupComponent } from '../../accounts/login-popup/login-popup.component';
+
 
 @Component({
   selector: 'app-header',

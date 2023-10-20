@@ -20,9 +20,9 @@ import { NewsComponent } from './components/main/news/news.component';
 import { FamilyComponent } from './components/main/family/family.component';
 import { ContactComponent } from './components/main/contact/contact.component';
 import { FooterComponent } from './components/main/footer/footer.component';
-import { LoginPopupComponent } from './components/login-popup/login-popup.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UsersService } from './services/users.service';
+
 
 import { UserHeaderComponent } from './components/user/user-header/user-header.component';
 import { EventsComponent } from './components/user/events/events.component';
@@ -31,36 +31,40 @@ import { LeaderboardComponent } from './components/user/leaderboard/leaderboard.
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { TodolistComponent } from './components/user/todolist/todolist.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
-import { RegisterComponent } from './components/main/register/register.component';
+
 import { SettingsComponent } from './components/user/settings/settings.component';
 import { AssignmentsComponent } from './components/user/assignments/assignments.component';
 import { UserComponent } from './components/user/user/user.component';
 import { MainComponent } from './components/main/main/main.component';
 import { AssignmentComponent } from './components/user/todolist/assignment/assignment/assignment.component';
-import { DashboardComponent } from './components/admin/fix/navbar/dashboard.component';
-import { GeneralInfoCardsComponent } from './components/admin/main_dashboard_components/info_cards/general-info-cards/general-info-cards.component';
-import { RecentTasksComponent } from './components/admin/main_dashboard_components/recent-tasks/recent-tasks.component';
-import { LeaderBoardComponent } from './components/admin/main_dashboard_components/leader-board/leader-board.component';
-import { TaskComponent } from './components/admin/main_dashboard_components/recent-tasks/tasks/task/task.component';
-import { MemberComponent } from './components/admin/main_dashboard_components/leader-board/member/member/member.component';
-import { PasswordPopupComponent } from './components/admin/main_dashboard_components/password-popup/password-popup.component';
-import { ScorecardPopupComponent } from './components/admin/main_dashboard_components/pop_ups/scorecard-popup/scorecard-popup.component';
-import { SignoutPopupComponent } from './components/admin/main_dashboard_components/pop_ups/signout-popup/signout-popup.component';
-import { ContentComponent } from './components/admin/fix/content/content.component';
-import { AlltasksComponent } from './components/admin/fix/alltasks/alltasks.component';
-import { SharedComponentComponent } from './components/admin/fix/shared_components/shared-component/shared-component.component';
-import { AddPopupComponent } from './components/admin/fix/shared_components/shared_popups/add-popup/add-popup.component';
-import { DeletePopupComponent } from './components/admin/fix/shared_components/shared_popups/delete-popup/delete-popup.component';
-import { ModifyPopupComponent } from './components/admin/fix/shared_components/shared_popups/modify-popup/modify-popup.component';
-import { DetailsPopupComponent } from './components/admin/fix/shared_components/shared_popups/details-popup/details-popup.component';
-import { MemberCardComponent } from './components/admin/fix/navbar/members/member-card/member-card.component';
-import { AddMemberPopupComponent } from './components/admin/fix/navbar/members/add-member-popup/add-member-popup.component';
-import { EventsadminComponent } from './components/admin/fix/events/events/eventsadmin.component';
-import { SharedComponentLabelComponent } from './components/admin/fix/shared_components/shared-component-label/shared-component-label.component';
+
 import { AnimationTypewriterComponent } from './components/main/home/animation/animation-typewriter.component';
-import { SingleComponentComponent } from './components/admin/fix/content/single-component/single-component.component';
-import { ApplicationComponent } from './components/application/application.component';
+
 import { PointsPopupComponent } from './components/user/user-home/points/points-popup/points-popup.component';
+import { LoginPopupComponent } from './components/accounts/login-popup/login-popup.component';
+import { RegisterComponent } from './components/accounts/register/register.component';
+import { DashboardComponent } from './components/admin/components/main/dashboard/dashboard.component';
+import { GeneralInfoCardsComponent } from './components/admin/components/main/info_cards/general-info-cards/general-info-cards.component';
+import { RecentTasksComponent } from './components/admin/components/main/recent-tasks/recent-tasks.component';
+import { LeaderBoardComponent } from './components/admin/components/main/leader-board/leader-board.component';
+import { TaskComponent } from './components/admin/components/main/recent-tasks/tasks/task/task.component';
+import { PasswordPopupComponent } from './components/admin/popups/pop_ups/password-popup/password-popup.component';
+import { MemberComponent } from './components/admin/components/main/leader-board/member/member/member.component';
+import { ScorecardPopupComponent } from './components/admin/popups/pop_ups/scorecard-popup/scorecard-popup.component';
+import { SignoutPopupComponent } from './components/admin/popups/pop_ups/signout-popup/signout-popup.component';
+import { ContentComponent } from './components/admin/components/content/content.component';
+import { AlltasksComponent } from './components/admin/components/alltasks/alltasks.component';
+import { SharedComponentComponent } from './components/admin/popups/shared-component/shared-component.component';
+import { AddPopupComponent } from './components/admin/popups/shared_popups/add-popup/add-popup.component';
+import { DeletePopupComponent } from './components/admin/popups/shared_popups/delete-popup/delete-popup.component';
+import { ModifyPopupComponent } from './components/admin/popups/shared_popups/modify-popup/modify-popup.component';
+import { DetailsPopupComponent } from './components/admin/popups/shared_popups/details-popup/details-popup.component';
+import { MemberCardComponent } from './components/admin/components/main/members/member-card/member-card.component';
+import { EventsadminComponent } from './components/admin/components/events/events/eventsadmin.component';
+import { AddMemberPopupComponent } from './components/admin/components/main/members/add-member-popup/add-member-popup.component';
+import { SharedComponentLabelComponent } from './components/admin/popups/shared-component-label/shared-component-label.component';
+import { SingleComponentComponent } from './components/admin/components/content/single-component/single-component.component';
+import { ApplicationComponent } from './components/accounts/application/application.component';
 
 
 @NgModule({

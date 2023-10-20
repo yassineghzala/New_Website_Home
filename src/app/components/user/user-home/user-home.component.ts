@@ -4,7 +4,6 @@ import { AssignmentService } from 'src/app/services/assignment.service';
 import { EventService } from 'src/app/services/event.service';
 import { HsService } from 'src/app/services/hs.service';
 import { MemberService } from 'src/app/services/member.service';
-import { PasswordPopupComponent } from '../../admin/main_dashboard_components/password-popup/password-popup.component';
 import { MatDialog } from '@angular/material/dialog';
 import { PointsPopupComponent } from './points/points-popup/points-popup.component';
 

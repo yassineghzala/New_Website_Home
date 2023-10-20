@@ -33,6 +33,8 @@ export class EventsadminComponent {
     this.dialogRef.open(SignoutPopupComponent);
   }
   openAddPopup(){
-    this.dialogRef.open(AddPopupComponent);
+    this.dialogRef.open(AddPopupComponent,{
+      data:{ComponentName:"events"}
+    });
   }
 }

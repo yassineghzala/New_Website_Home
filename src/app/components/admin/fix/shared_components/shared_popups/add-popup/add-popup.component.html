@@ -1,6 +1,6 @@
-<div class="shared_popup_body">
+<div class="shared_popup_body" *ngIf="data.ComponentName=='events'">
     <div class="popup_header">
-        <h2 class="shared_popup_title">Add</h2>
+        <h2 class="shared_popup_title">Add event</h2>
         <mat-icon class="close_icon" mat-button [mat-dialog-close]="true" style="margin-top:-80px;">close</mat-icon>
     </div>
     <form action="" [formGroup]="newEvent" (ngSubmit)="addEvent()">
@@ -9,15 +9,58 @@
             <input type="text" formControlName="nameEvent">
         </div>
         <div class="shared_form_parts">
+            <label for="">place</label>
+            <input type="text" formControlName="place">
+        </div>
+        <div class="shared_form_parts">
             <label for="">Date</label>
             <input type="date" formControlName="dateEvent">
         </div>
         <div class="shared_form_parts">
             <label for="">Departement</label>
-            <select id="Dep" name="Departement">
-                <option value="Dev">Dev</option>
-                <option value="Media">Media</option>
-                <option value="Both">Both</option>
+            <select id="Dep" name="Departement" formControlName="idDeparts">
+                <option value="1">Dev</option>
+                <option value="2">Media</option>
+                <option value="3">both</option>
+            </select>
+        </div>
+        <div class="shared_form_parts">
+            <label for="">Image</label>
+            <input type="file">
+        </div>
+        <div class="shared_form_parts_wtextarea">
+            <label for="">Details</label>
+            <textarea name="" id="" formControlName="description" cols="30" rows="20" style="height:120px;"></textarea>
+        </div>
+        <div class="center_button">
+            <button class="single_button shared_form_button">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="shared_popup_body" *ngIf="data.ComponentName=='tasks'">
+    <div class="popup_header">
+        <h2 class="shared_popup_title">Add task</h2>
+        <mat-icon class="close_icon" mat-button [mat-dialog-close]="true" style="margin-top:-80px;">close</mat-icon>
+    </div>
+    <form action="" [formGroup]="newTask" (ngSubmit)="addTask()">
+        <div class="shared_form_parts">
+            <label for="">Name</label>
+            <input type="text" formControlName="title">
+        </div>
+        <div class="shared_form_parts">
+            <label for="">place</label>
+            <input type="text" formControlName="description">
+        </div>
+        <div class="shared_form_parts">
+            <label for="">Date</label>
+            <input type="date" formControlName="deadline">
+        </div>
+        <div class="shared_form_parts">
+            <label for="">Departement</label>
+            <select id="Dep" name="Departement" formControlName="idDeparts">
+                <option value="1">Dev</option>
+                <option value="2">Media</option>
+                <option value="3">both</option>
             </select>
         </div>
         <div class="shared_form_parts">

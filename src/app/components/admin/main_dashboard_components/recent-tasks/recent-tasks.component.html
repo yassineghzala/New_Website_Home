@@ -6,7 +6,9 @@
             <h2>Task</h2>
             <h2>Task Status</h2>
         </div>
-        <app-task></app-task>
+        <ng-container *ngFor="let td of recentDevTasks;index as i;">
+            <app-task *ngIf="i<2" [devTask]="td"></app-task>
+        </ng-container>
     </div>
     <h2 class="table_title titles">Media Departement</h2>
     <div class="tasks_container">
@@ -14,7 +16,9 @@
             <h2>Task</h2>
             <h2>Task Status</h2>
         </div>
-        <app-task></app-task>
+        <ng-container *ngFor="let tm of recentMediaTasks;index as i1;">
+            <app-task *ngIf="i1<2" [mediaTask]="tm"></app-task>
+        </ng-container>
     </div>
-    
+
 </div>

@@ -1,7 +1,16 @@
-<div class="tasks">
-    <p >Example task</p>
+<div class="tasks" *ngIf="devTask!=undefined">
+    <p >{{devTask.title}}</p>
     <p class="task_status">
-        <span>Example status</span>
-        <mat-icon class="task_status_icon">check</mat-icon>
+        <span>{{devTask.statue}}</span>
+    <mat-icon *ngIf="devTask.statue">check</mat-icon>
+    <mat-icon *ngIf="!devTask.statue">clear</mat-icon>
+    </p>
+</div>
+<div class="tasks" *ngIf="mediaTask!=undefined">
+    <p >{{mediaTask.title}}</p>
+    <p class="task_status">
+        <span>{{mediaTask.statue}}</span>
+    <mat-icon *ngIf="mediaTask.statue">check</mat-icon>
+    <mat-icon *ngIf="!mediaTask.statue">clear</mat-icon>
     </p>
 </div>

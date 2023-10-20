@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./password-popup.component.css']
 })
 export class PasswordPopupComponent {
-
+  
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -62,6 +62,7 @@ import { SingleComponentComponent } from './components/admin/fix/content/single-
 import { ApplicationComponent } from './components/application/application.component';
 import { PointsPopupComponent } from './components/user/user-home/points/points-popup/points-popup.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,7 +117,7 @@ import { PointsPopupComponent } from './components/user/user-home/points/points-
     AnimationTypewriterComponent,
     SingleComponentComponent,
     ApplicationComponent,
-    PointsPopupComponent,
+    PointsPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +134,7 @@ import { PointsPopupComponent } from './components/user/user-home/points/points-
     HttpClientModule,
   ],
   exports: [LoginPopupComponent],
-  providers: [],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

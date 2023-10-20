@@ -4,6 +4,7 @@ import { DeletePopupComponent } from '../shared_popups/delete-popup/delete-popup
 import { ModifyPopupComponent } from '../shared_popups/modify-popup/modify-popup.component';
 import { DetailsPopupComponent } from '../shared_popups/details-popup/details-popup.component';
 import { Input } from '@angular/core';
+import { Assignment } from 'src/app/models/assignment';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Input } from '@angular/core';
 })
 export class SharedComponentComponent {
   @Input() event!: any;
+  @Input() task!:Assignment;
   constructor(private dialogRef: MatDialog){
 
   }

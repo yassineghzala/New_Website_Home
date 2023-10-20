@@ -75,11 +75,9 @@
             <div class="button_area">
                 <button class="single_button" (click)="openAddPopup();">Add Event</button>
             </div>
-            <div class="content_area">
-                <app-shared-component-label ></app-shared-component-label>
-                <app-shared-component></app-shared-component>
-                <app-shared-component></app-shared-component>
-                <app-shared-component></app-shared-component>
+            <div class="content_area" *ngIf="events!=undefined">
+                <app-shared-component-label></app-shared-component-label>
+                <app-shared-component *ngFor="let e of events" [event]="e"></app-shared-component>
             </div>
         </div>
     </mat-sidenav-content>

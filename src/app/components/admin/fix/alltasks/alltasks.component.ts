@@ -20,7 +20,9 @@ export class AlltasksComponent {
 
   }
   ngOnInit(){
-    
+    this.tservice.getAllAssignments().subscribe((res)=>{
+      this.tasks=res;
+    })
   }
   openPasswordPopup(){
     this.dialogRef.open(PasswordPopupComponent);
@@ -32,6 +34,8 @@ export class AlltasksComponent {
     this.dialogRef.open(SignoutPopupComponent);
   }
   openAddPopup(){
-    this.dialogRef.open(AddPopupComponent);
+    this.dialogRef.open(AddPopupComponent,{
+      data:{ComponentName:"tasks"}
+    });
   }
 }

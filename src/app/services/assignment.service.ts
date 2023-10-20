@@ -18,7 +18,10 @@ export class AssignmentService {
   getAllAssignments():Observable<any>{
     return this.bostagi.get<{res:any}>(this.assignmentsUrl)
   }
-  getAssignmentByDep(dep:string):Observable<any>{
+  getAssignmentByDep(dep:number):Observable<any>{
     return this.bostagi.get<{res:any}>(`${this.assignmentsUrl}?department=${dep}`)
+  }
+  addAssignment(form:Assignment):Observable<any>{
+    return this.bostagi.post<{res:Assignment}>(this.assignmentsUrl,form);
   }
 }

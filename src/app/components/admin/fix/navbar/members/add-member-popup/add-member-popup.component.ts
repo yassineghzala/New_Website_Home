@@ -23,7 +23,8 @@ export class AddMemberPopupComponent {
       cin:[""],
       phone:[""],
       pdp:[""],
-      mail:[""]
+      mail:[""],
+      idDepart:[]
     })
   }
   addMember(){

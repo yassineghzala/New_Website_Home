@@ -9,15 +9,21 @@ import { DepartService } from 'src/app/services/depart.service';
   styleUrls: ['./recent-tasks.component.css']
 })
 export class RecentTasksComponent {
-  recentDevTasks!:Assignment[]
-  recentMediaTasks!:Assignment[]
+  recentDevTasks:Assignment[]=[]
+  recentMediaTasks:Assignment[]=[]
   constructor(private dservice:DepartService){}
   ngOnInit(){
     this.dservice.getDepartById(1).subscribe((res)=>{
-      this.recentDevTasks=res.tasks;
+      for (let i = res.tasks.length; i > 0; i--) {
+        this.recentDevTasks.push(res.tasks[i]);
+      }
+      
+      
     })
     this.dservice.getDepartById(2).subscribe((res)=>{
-      this.recentMediaTasks=res.tasks;
+      for (let i = res.tasks.length; i > 0; i--) {
+        this.recentMediaTasks.push(res.tasks[i]);
+      }
     })
   }
 }

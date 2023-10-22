@@ -66,6 +66,7 @@ import { SharedComponentLabelComponent } from './components/admin/popups/shared-
 import { SingleComponentComponent } from './components/admin/components/content/single-component/single-component.component';
 import { ApplicationComponent } from './components/accounts/application/application.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

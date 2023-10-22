@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 
-import { AssignmentService } from 'src/app/services/assignment.service';
 import { PasswordPopupComponent } from '../../popups/pop_ups/password-popup/password-popup.component';
 import { ScorecardPopupComponent } from '../../popups/pop_ups/scorecard-popup/scorecard-popup.component';
 import { SignoutPopupComponent } from '../../popups/pop_ups/signout-popup/signout-popup.component';

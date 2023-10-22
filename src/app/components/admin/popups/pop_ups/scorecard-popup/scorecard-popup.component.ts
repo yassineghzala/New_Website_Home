@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Member } from 'src/app/models/member';
-import { MonthScore } from 'src/app/models/month-score';
 import { MemberService } from 'src/app/services/member.service';
 import { MonthScoreService } from 'src/app/services/month-score.service';
 
@@ -11,31 +10,35 @@ import { MonthScoreService } from 'src/app/services/month-score.service';
   styleUrls: ['./scorecard-popup.component.css']
 })
 export class ScorecardPopupComponent {
-  members!: Member[]
+  members!:Member[]
   scoreCard!: FormGroup
-  score!: MonthScore
+  year!:number
+  months:any=["janvier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre"]
+  month!:string
   constructor(private mService: MemberService, private formBuilder: FormBuilder, private mSService: MonthScoreService) { }
   ngOnInit() {
+    this.year=new Date().getFullYear();
+    this.month=this.months[new Date().getMonth()]
+    console.log("month",this.month);
+    console.log("month",this.year);
+    
     this.mService.getAllMembers().subscribe((res) => {
       this.members = res;
       console.log("members",this.members);
-      
     })
     this.scoreCard = this.formBuilder.group({
-      idDepart: [""],
-      idUser: [""],
       media: [""],
       discipline: [""],
       contribution: [""],
       departPoints: [""],
-      month: [""],
-      depoNote: ["10"],
-      moyen: ["10"],
     });
   }
-  addMonthScore(){
-    this.score=this.scoreCard.value;
-    console.log("aaa",this.score);
-    this.mSService.addMonthS(this.score);
+  addMonthScore(idmember:string){
+    this.scoreCard.value.month=this.month;
+    this.scoreCard.value.year=this.year;
+    this.mSService.addMonthS(parseInt(idmember),this.scoreCard.value).subscribe((res)=>{
+      console.log("added month score",res);
+      
+    })
   }
 }

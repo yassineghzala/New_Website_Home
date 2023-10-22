@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Member } from 'src/app/models/member';
-import { ImageserviceService } from 'src/app/services/imageservice.service';
 
 
 @Component({
@@ -10,12 +9,9 @@ import { ImageserviceService } from 'src/app/services/imageservice.service';
 })
 export class ProfileComponent {
   @Input() currentUser!: Member;
-  image!:Blob
-  constructor(private iservice:ImageserviceService){}
+  constructor(){}
   ngOnInit(){
     console.log("profile",this.currentUser);
-    this.iservice.getImageByName("aaaa").subscribe((res)=>{
-      this.image=res
-    })
+    
   }
 }

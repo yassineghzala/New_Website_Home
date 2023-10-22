@@ -3,7 +3,7 @@
         <h2 class="shared_popup_title">Add event</h2>
         <mat-icon class="close_icon" mat-button [mat-dialog-close]="true" style="margin-top:-80px;">close</mat-icon>
     </div>
-    <form action="" [formGroup]="newEvent" (ngSubmit)="addEvent()">
+    <form action="" [formGroup]="newEvent"  *ngIf="departs!=undefined" (ngSubmit)="addEvent(idDepart.value)">
         <div class="shared_form_parts">
             <label for="">Name</label>
             <input type="text" formControlName="nameEvent">
@@ -18,10 +18,8 @@
         </div>
         <div class="shared_form_parts">
             <label for="">Departement</label>
-            <select id="Dep" name="Departement" formControlName="idDeparts">
-                <option value="1">Dev</option>
-                <option value="2">Media</option>
-                <option value="3">both</option>
+            <select id="Dep" name="Departement" #idDepart>
+                <option *ngFor="let d of departs" [value]="d.id">{{d.nameDep}}</option>
             </select>
         </div>
         <div class="shared_form_parts">
@@ -42,14 +40,10 @@
         <h2 class="shared_popup_title">Add task</h2>
         <mat-icon class="close_icon" mat-button [mat-dialog-close]="true" style="margin-top:-80px;">close</mat-icon>
     </div>
-    <form action="" [formGroup]="newTask" (ngSubmit)="addTask()">
+    <form action=""  *ngIf="departs!=undefined" [formGroup]="newTask" (ngSubmit)="addTask(idDepart.value)">
         <div class="shared_form_parts">
             <label for="">Name</label>
             <input type="text" formControlName="title">
-        </div>
-        <div class="shared_form_parts">
-            <label for="">place</label>
-            <input type="text" formControlName="description">
         </div>
         <div class="shared_form_parts">
             <label for="">Date</label>
@@ -57,10 +51,8 @@
         </div>
         <div class="shared_form_parts">
             <label for="">Departement</label>
-            <select id="Dep" name="Departement" formControlName="idDeparts">
-                <option value="1">Dev</option>
-                <option value="2">Media</option>
-                <option value="3">both</option>
+            <select id="Dep" name="Departement" #idDepart>
+                <option *ngFor="let d of departs" [value]="d.id">{{d.nameDep}}</option>
             </select>
         </div>
         <div class="shared_form_parts">

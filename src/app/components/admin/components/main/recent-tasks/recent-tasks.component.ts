@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Assignment } from 'src/app/models/assignment';
 import { AssignmentService } from 'src/app/services/assignment.service';
+import { DepartService } from 'src/app/services/depart.service';
 
 @Component({
   selector: 'app-recent-tasks',
@@ -10,13 +11,13 @@ import { AssignmentService } from 'src/app/services/assignment.service';
 export class RecentTasksComponent {
   recentDevTasks!:Assignment[]
   recentMediaTasks!:Assignment[]
-  constructor(private tservice:AssignmentService){}
+  constructor(private dservice:DepartService){}
   ngOnInit(){
-    this.tservice.getAssignmentByDep(1).subscribe((res)=>{
-      this.recentDevTasks=res
+    this.dservice.getDepartById(1).subscribe((res)=>{
+      this.recentDevTasks=res.tasks;
     })
-    this.tservice.getAssignmentByDep(2).subscribe((res)=>{
-      this.recentMediaTasks=res
+    this.dservice.getDepartById(2).subscribe((res)=>{
+      this.recentMediaTasks=res.tasks;
     })
   }
 }

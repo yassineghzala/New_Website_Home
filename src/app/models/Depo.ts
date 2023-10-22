@@ -1,15 +1,16 @@
 import { Assignment } from "./assignment";
-import { Member } from "./member";
 
 export class Depo {
     public id:number;
-    public idMember:Member;
-    public task:Assignment;
     public work:string;
-    constructor(id:number,idMember:Member,task:Assignment,work:string){
+    public task:Assignment;
+    public note:number
+    public dateDepo:Date
+    constructor(id:number,task:Assignment,work:string,note:number,dateDepo:Date){
         this.id=id;
-        this.idMember=idMember;
         this.task=task;
         this.work=work;
+        this.note=note
+        this.dateDepo=dateDepo
     }
 }

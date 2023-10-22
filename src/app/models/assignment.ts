@@ -7,14 +7,12 @@ export class Assignment {
     public deadline:string;
     public score:number
     public statue:boolean
-    public departs:Departement[]
-    constructor(id:number,title:string,description:string,deadline:string,score:number,statue:boolean,departs:Departement[]){
+    constructor(id:number,title:string,description:string,deadline:string,score:number,statue:boolean){
         this.id=id;
         this.title=title;
         this.description=description;
         this.deadline=deadline;
         this.score=score;
         this.statue=statue;
-        this.departs=departs
     }
 }

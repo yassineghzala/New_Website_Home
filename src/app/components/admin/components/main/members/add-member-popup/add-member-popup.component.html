@@ -3,7 +3,7 @@
         <h1 class="titles">Member:</h1>
         <mat-icon class="close_icon" mat-button [mat-dialog-close]="true">close</mat-icon>
     </div>
-    <form [formGroup]="newMember" th:action="@{/Member/save}" th:object="${Member}" method="post" enctype="multipart/form-data"  (ngSubmit)="addMember()">
+    <form [formGroup]="newMember" *ngIf="departs!=undefined"  method="post"  (ngSubmit)="addMember(depart.value)">
         <table class="add_member_table">
             <tr class="add_member_tr">
                 <td>
@@ -26,10 +26,9 @@
                     <label for="">Departement</label>
                 </td>
                 <td>
-                    <select formControlName="idDepart"  name="" id="">
+                    <select #depart  name="" id="">
                         <optgroup>
-                            <option value="1">Dev</option>
-                            <option value="2">Media</option>
+                            <option *ngFor="let d of departs" [value]="d.id">{{d.nameDep}}</option>
                         </optgroup>
                     </select>
                 </td>

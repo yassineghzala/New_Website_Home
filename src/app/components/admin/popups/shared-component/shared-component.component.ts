@@ -15,6 +15,7 @@ import { Assignment } from 'src/app/models/assignment';
 export class SharedComponentComponent {
   @Input() event!: any;
   @Input() task!:Assignment;
+  @Input() depart!:string;
   constructor(private dialogRef: MatDialog){
 
   }
@@ -22,13 +23,19 @@ export class SharedComponentComponent {
     console.log("ee",this.event);
     
   }
-  openDeletePopup(){
-    this.dialogRef.open(DeletePopupComponent);
+  openDeletePopup(ident:number,name:string){
+    this.dialogRef.open(DeletePopupComponent,{
+      data:{componentName:name,id:ident}
+    });
   }
-  openModifyPopup(){
-    this.dialogRef.open(ModifyPopupComponent);
+  openModifyPopup(ident:number,name:string){
+    this.dialogRef.open(ModifyPopupComponent,{
+      data:{componentName:name,id:ident}
+    });
   }
-  openDetailsPopup(){
-    this.dialogRef.open(DetailsPopupComponent);
+  openDetailsPopup(ident:number,name:string){
+    this.dialogRef.open(DetailsPopupComponent,{
+      data:{componentName:name,id:ident}
+    });
   }
 }

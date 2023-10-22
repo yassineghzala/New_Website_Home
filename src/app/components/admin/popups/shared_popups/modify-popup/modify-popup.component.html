@@ -1,24 +1,16 @@
-<div class="shared_popup_body">
+<div class="shared_popup_body" *ngIf="task!=undefined">
     <div class="popup_header">
-        <h2 class="shared_popup_title">Modify</h2>
+        <h2 class="shared_popup_title">update task</h2>
         <mat-icon class="close_icon" mat-button [mat-dialog-close]="true" style="margin-top:-80px;">close</mat-icon>
     </div>
-    <form action="" >
+    <form action="" (ngSubmit)="updateTask()" *ngIf="departs!=undefined" >
         <div class="shared_form_parts">
             <label for="">Name</label>
-            <input type="text">
+            <input type="text" [(ngModel)]="task.title" name="title">
         </div>
         <div class="shared_form_parts">
             <label for="">Date</label>
-            <input type="date">
-        </div>
-        <div class="shared_form_parts">
-            <label for="">Departement</label>
-            <select id="Dep" name="Departement">
-                <option value="Dev">Dev</option>
-                <option value="Media">Media</option>
-                <option value="Both">Both</option>
-            </select>
+            <input type="date" [(ngModel)]="task.deadline" name="deadline">
         </div>
         <div class="shared_form_parts">
             <label for="">Image</label>
@@ -26,7 +18,34 @@
         </div>
         <div class="shared_form_parts_wtextarea">
             <label for="">Details</label>
-            <textarea name="" id="" cols="30" rows="20" style="height:120px;"></textarea>
+            <textarea name="" id="" [(ngModel)]="task.description" name="description" cols="30" rows="20" style="height:120px;"></textarea>
+        </div>
+        <div class="center_button">
+            <button class="single_button shared_form_button">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="shared_popup_body" *ngIf="event!=undefined">
+    <div class="popup_header">
+        <h2 class="shared_popup_title">update Evnet</h2>
+        <mat-icon class="close_icon" mat-button [mat-dialog-close]="true" style="margin-top:-80px;">close</mat-icon>
+    </div>
+    <form action="" (ngSubmit)="updateEvent()"  *ngIf="departs!=undefined" >
+        <div class="shared_form_parts">
+            <label for="">Name</label>
+            <input type="text" [(ngModel)]="event.nameEvent" name="name" >
+        </div>
+        <div class="shared_form_parts">
+            <label for="">Date</label>
+            <input type="date" [(ngModel)]="event.dateEvent" name="date" >
+        </div>
+        <div class="shared_form_parts">
+            <label for="">Image</label>
+            <input type="file">
+        </div>
+        <div class="shared_form_parts_wtextarea">
+            <label for="">Details</label>
+            <textarea name="" id="" [(ngModel)]="event.description" name="description" cols="30" rows="20" style="height:120px;"></textarea>
         </div>
         <div class="center_button">
             <button class="single_button shared_form_button">Submit</button>

@@ -7,8 +7,8 @@
                     data-bs-target="#modal-points">
                     <div (click)="openPointspopup();" class="card-user points_card d-flex flex-column justify-content-center points">
                         <img src="../../../../assets/icons/coins.png" alt="" class="icon-article">
-                        <h2>{{this.score}}</h2>
-                        <h3>Points</h3>
+                        <h2>Points</h2>
+                        <h3>{{this.currentUser.score}}</h3>
                     </div>
                 </button>
             </div>
@@ -32,7 +32,7 @@
         <section class="leaderboard m">
             <div class="leader leader_container ">
                 <h2 style="text-align:center;margin-bottom: 30px;">Leaderboard</h2>
-                <table class="table ">
+                <table class="table " *ngIf="members!=undefined">
                     <thead>
                         <tr>
                             <th scope="col"></th>
@@ -43,19 +43,19 @@
                     <tbody>
                         <tr>
                             <th scope="row"></th>
-                            <td>{{members[0].fullname}}</td>
+                            <td>{{members[0].name}}</td>
                             <td>{{members[0].score}}</td>
                         </tr>
                         
                         <tr>
                             <th scope="row"></th>
-                            <td>{{members[1].fullname}}</td>
+                            <td>{{members[1].name}}</td>
                             <td>{{members[1].score}}</td>
                         </tr>
                         
                         <tr>
                             <th scope="row"></th>
-                            <td>{{members[2].fullname}}</td>
+                            <td>{{members[2].name}}</td>
                             <td>{{members[2].score}}</td>
                         </tr>
                     </tbody>

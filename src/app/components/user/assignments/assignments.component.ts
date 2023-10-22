@@ -5,7 +5,7 @@ import { Assignment } from 'src/app/models/assignment';
 import { Member } from 'src/app/models/member';
 import { User } from 'src/app/models/user';
 import { AssignmentService } from 'src/app/services/assignment.service';
-import { DepoServiceService } from 'src/app/services/depo-service.service';
+import { DepoService } from 'src/app/services/depo.service';
 import { MemberService } from 'src/app/services/member.service';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -15,10 +15,9 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./assignments.component.css']
 })
 export class AssignmentsComponent {
-  constructor(private active:ActivatedRoute,private aservice:AssignmentService,private mservice:MemberService,private depoService:DepoServiceService){}
+  constructor(private active:ActivatedRoute,private aservice:AssignmentService,private mservice:MemberService,private depoService:DepoService){}
   currentAssignment!:Assignment
   currentUser!:Member
-  workDone!:Depo
   ngOnInit(){
     const assignmentId=this.active.snapshot.params['aid'];
     this.aservice.getAssignmentById(assignmentId).subscribe((res)=>{
@@ -30,14 +29,12 @@ export class AssignmentsComponent {
       this.currentUser=res
     })
   }
-  assignmentDone(currentAssignment:Assignment){
+  assignmentDone(work:string){
     console.log("current idddd",this.currentAssignment);
+    console.log("sss",work);
     
-    this.workDone.task=this.currentAssignment
-    this.workDone.idMember=this.currentUser;
-    this.workDone.work="work"
-    this.depoService.addWork(this.workDone).subscribe((res)=>{
-      console.log("work added",this.workDone);
+    this.depoService.addWork(this.currentUser.id,this.currentAssignment.id,work).subscribe((res)=>{
+      console.log("work added",res);
       
     })
   }

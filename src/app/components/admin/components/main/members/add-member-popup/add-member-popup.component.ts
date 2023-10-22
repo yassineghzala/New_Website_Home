@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Departement } from 'src/app/models/departement';
 import { Member } from 'src/app/models/member';
+import { DepartService } from 'src/app/services/depart.service';
 import { MemberService } from 'src/app/services/member.service';
 
 @Component({
@@ -11,34 +14,31 @@ import { MemberService } from 'src/app/services/member.service';
 export class AddMemberPopupComponent {
   newMember!:FormGroup
   member!:Member
-  constructor(private memberService:MemberService,private formBuilder:FormBuilder){}
+  departs!:Departement[]
+  constructor(private memberService:MemberService,private formBuilder:FormBuilder,private dService: DepartService,private dialogRef: MatDialog){}
   ngOnInit() {
+    this.dService.getAllDeparts().subscribe((res)=>{
+      this.departs=res
+    })
     this.newMember=this.formBuilder.group({
       name:[""],
-      username:[""],
       birthday:[""],
       role:[""],
-      password:[""],
-      Mscore:[""],
       cin:[""],
       phone:[""],
       pdp:[""],
       mail:[""],
-      idDepart:[]
     })
   }
-  addMember(){
+  addMember(idDepart:string){
     this.member=this.newMember.value;
-    this.member.username=this.member.name;
-    this.member.password=this.member.name;
-    this.member.name=this.member.name;
     this.member.score=0;
-    this.member.Mscore=0;
+    this.member.Mscore=[];
     this.member.role="member"
     console.log("ahawa",this.member);
-    this.memberService.addMember(this.member).subscribe((res)=>{
+    this.memberService.addMember(parseInt(idDepart),this.member).subscribe((res)=>{
       console.log("member added",this.member);
-      
+      this.dialogRef.closeAll()
     })
   }
 }

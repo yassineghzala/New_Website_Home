@@ -9,6 +9,7 @@ import { Member } from 'src/app/models/member';
 })
 export class MemberCardComponent {
   @Input() member!: Member;
+  @Input() depart!: string;
   ngOnInit(){
     console.log("member",this.member);
     

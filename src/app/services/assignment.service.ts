@@ -21,7 +21,13 @@ export class AssignmentService {
   getAssignmentByDep(dep:number):Observable<any>{
     return this.bostagi.get<{res:any}>(`${this.assignmentsUrl}?department=${dep}`)
   }
-  addAssignment(form:Assignment):Observable<any>{
-    return this.bostagi.post<{res:Assignment}>(this.assignmentsUrl,form);
+  addAssignment(id:number,form:Assignment):Observable<any>{
+    return this.bostagi.post<{res:Assignment}>(`${this.assignmentsUrl}/${id}`,form);
+  }
+  updateAssignment(id:number,form:Assignment):Observable<any>{
+    return this.bostagi.put<{res:Assignment}>(`${this.assignmentsUrl}/${id}`,form);
+  }
+  deleteAssignmentById(id:number):Observable<any>{
+    return this.bostagi.delete(`${this.assignmentsUrl}/${id}`);
   }
 }

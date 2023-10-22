@@ -66,7 +66,6 @@ import { SharedComponentLabelComponent } from './components/admin/popups/shared-
 import { SingleComponentComponent } from './components/admin/components/content/single-component/single-component.component';
 import { ApplicationComponent } from './components/accounts/application/application.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -135,7 +134,7 @@ import { ApplicationComponent } from './components/accounts/application/applicat
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports: [LoginPopupComponent],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],

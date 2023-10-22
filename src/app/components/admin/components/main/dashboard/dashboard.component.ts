@@ -5,6 +5,8 @@ import { ScorecardPopupComponent } from '../../../popups/pop_ups/scorecard-popup
 import { SignoutPopupComponent } from '../../../popups/pop_ups/signout-popup/signout-popup.component';
 import { MemberService } from 'src/app/services/member.service';
 import { AddMemberPopupComponent } from '../members/add-member-popup/add-member-popup.component';
+import { DepartService } from 'src/app/services/depart.service';
+import { Departement } from 'src/app/models/departement';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,13 +14,13 @@ import { AddMemberPopupComponent } from '../members/add-member-popup/add-member-
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  members!:any
-  constructor(private dialogRef: MatDialog,private mservice:MemberService){
+  departs!:Departement[]
+  constructor(private dialogRef: MatDialog,private dService:DepartService){
 
   }
   ngOnInit(){
-    this.mservice.getAllMembers().subscribe((res)=>{
-      this.members=res;
+    this.dService.getAllDeparts().subscribe((res)=>{
+      this.departs=res;
     })
   }
   openPasswordPopup(){

@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MonthScoreService {
-  monthScoreUrl=environment.apiUrl+"/MonthScore";
+  monthScoreUrl=environment.apiUrl+"/monthScore";
 
   constructor(private bostagi:HttpClient) { }
-  addMonthS(form:MonthScore):Observable<any>{
-    return this.bostagi.post<{ res: MonthScore; }>(this.monthScoreUrl, form);
+  addMonthS(id:number,form:MonthScore):Observable<any>{
+    return this.bostagi.post<{ res: MonthScore; }>(`${this.monthScoreUrl}/${id}`, form);
   }
-  getAllMonthsS():Observable<any>{
-    return this.bostagi.get<{res:MonthScore[]}>(this.monthScoreUrl);
+  getAllMonthsS(id:number):Observable<any>{
+    return this.bostagi.get<{res:MonthScore[]}>(`${this.monthScoreUrl}/${id}`);
   }
 }

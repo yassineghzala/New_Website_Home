@@ -1,18 +1,18 @@
-<div class="content">
-    <div class="content_img_details">
+<div class="content" *ngIf="member!=undefined">
+    <div class="content_img_details" >
         <img src="../../../../../assets/images/logo.png" alt="" class="content_img">
-        <div class="content_details">
-            <h4>Assignment name</h4>
-            <h5>Who created it</h5>
-            <h5>Deposit Date</h5>
-            <h5>Details</h5>
+        <div class="content_details" >
+            <h4>Task title : {{depo.task.title}}</h4>
+            <h5>Member :{{member.name}}</h5>
+            <h5>date Depo :{{depo.dateDepo| date:'dd-MMMM-YYYY'}}</h5>
+            <h5>Url work : {{depo.work}}</h5>
         </div>
     </div>
     <div class="content_component_points">
         <form action="" class="content_component_form">
             <label for="">points:</label>
-            <input type="number" class="content_component_input">
-            <button type="submit" class="content_form_button">Submit</button>
+            <input type="number" [value]="depo.note" #note name="note" class="content_component_input">
+            <button type="submit" (click)="updateNote(note.value)" class="content_form_button">Submit</button>
         </form>
     </div>
 </div>

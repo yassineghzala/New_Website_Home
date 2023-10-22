@@ -4,6 +4,8 @@ import { PasswordPopupComponent } from '../../popups/pop_ups/password-popup/pass
 import { ScorecardPopupComponent } from '../../popups/pop_ups/scorecard-popup/scorecard-popup.component';
 import { SignoutPopupComponent } from '../../popups/pop_ups/signout-popup/signout-popup.component';
 import { AddPopupComponent } from '../../popups/shared_popups/add-popup/add-popup.component';
+import { Departement } from 'src/app/models/departement';
+import { DepartService } from 'src/app/services/depart.service';
 
 
 
@@ -15,8 +17,15 @@ import { AddPopupComponent } from '../../popups/shared_popups/add-popup/add-popu
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-  constructor(private dialogRef: MatDialog){
+  depart!:Departement[];
+  constructor(private dialogRef: MatDialog,private dService:DepartService){
 
+  }
+
+  ngOnInit(){
+    this.dService.getAllDeparts().subscribe((res)=>{
+      this.depart=res
+    })
   }
   openPasswordPopup(){
     this.dialogRef.open(PasswordPopupComponent);

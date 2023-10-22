@@ -14,4 +14,12 @@ export class DepartService {
   getDepartById(id:number):Observable<any>{
     return this.bostagi.get<{ res: Departement; }>(`${this.departUrl}/${id}`);
   }
+
+  addDepart(form:Departement):Observable<any>{
+    return this.bostagi.post<{ res: Departement; }>(this.departUrl,form);
+  }
+
+  getAllDeparts():Observable<any>{
+    return this.bostagi.get<{ res: Departement[]; }>(this.departUrl);
+  }
 }

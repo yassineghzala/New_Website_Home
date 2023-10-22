@@ -1,13 +1,13 @@
 <div class="points_popup">
     <table class="points_table">
         <thead class="thead_style">
-            <th>Task</th>
-            <th>Points</th>
+            <th>Month</th>
+            <th>Score</th>
         </thead>
         <tbody class="tbody_style">
-            <tr>
-                <td>Task name</td>
-                <td>points</td>
+            <tr *ngFor="let ms of monthScores">
+                <td>{{ms.month}}</td>
+                <td>{{ms.moyen}}</td>
             </tr>
         </tbody>
     </table>

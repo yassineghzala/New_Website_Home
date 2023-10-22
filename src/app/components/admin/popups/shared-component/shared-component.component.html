@@ -1,22 +1,22 @@
 <div class="shared_component" *ngIf="event!=undefined">
     <h3>{{event.nameEvent}}</h3>
-    <h3>{{event.dateEvent}}</h3>
-    <h3>{{event.idDeparts}}</h3>
+    <h3>{{event.dateEvent|date:'dd-MM-YYYY'}}</h3>
+    <h3>{{depart}}</h3>
     <img src="../../../../assets/images/Untitled__2_-removebg-preview.png" alt=""  class="component_image">
     <div class="component_buttons">
-        <button class="single_button" (click)="openDetailsPopup();">Details</button>
-        <button class="single_button" (click)="openModifyPopup();">Modify</button>
-        <button class="single_button" (click)="openDeletePopup();">Delete</button>
+        <button class="single_button" (click)="openDetailsPopup(event.id,'event')">Details</button>
+        <button class="single_button" (click)="openModifyPopup(event.id,'event');">Modify</button>
+        <button class="single_button" (click)="openDeletePopup(event.id,'event');">Delete</button>
     </div>
 </div>
 <div class="shared_component" *ngIf="task!=undefined">
     <h3>{{task.title}}</h3>
-    <h3>{{task.deadline}}</h3>
-    <h3>{{task.departs}}</h3>
+    <h3>{{task.deadline|date:'dd-MM-YYYY'}}</h3>
+    <h3>{{depart}}</h3>
     <img src="../../../../assets/images/Untitled__2_-removebg-preview.png" alt=""  class="component_image">
     <div class="component_buttons">
-        <button class="single_button" (click)="openDetailsPopup();">Details</button>
-        <button class="single_button" (click)="openModifyPopup();">Modify</button>
-        <button class="single_button" (click)="openDeletePopup();">Delete</button>
+        <button class="single_button" (click)="openDetailsPopup(task.id,'task')">Details</button>
+        <button class="single_button" (click)="openModifyPopup(task.id,'task');">Modify</button>
+        <button class="single_button" (click)="openDeletePopup(task.id,'task');">Delete</button>
     </div>
 </div>

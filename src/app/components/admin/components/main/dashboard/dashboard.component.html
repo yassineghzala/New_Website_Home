@@ -1,7 +1,7 @@
 <mat-toolbar class="toolbarstyle">
     <mat-toolbar-row>
         <button (click)="sidenav.toggle();" mat-icon-button>
-            <mat-icon class="menu_button" >menu</mat-icon>
+            <mat-icon class="menu_button">menu</mat-icon>
         </button>
         <div class="title_and_logo">
             <h1 class="title">Isetch Google Club</h1>
@@ -44,7 +44,7 @@
             </a>
             <a mat-list-item>
                 <div class="sidebar_item" (click)="openScorecardPopup()">
-                    <mat-icon class="sidebar_icon" >assessment</mat-icon>
+                    <mat-icon class="sidebar_icon">assessment</mat-icon>
                     Scorecard
                 </div>
             </a>
@@ -63,7 +63,7 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content style="height:90%;width:100%;">
-        <div class="container" >
+        <div class="container">
             <div class="info_cards info_cards_container">
                 <app-general-info-cards></app-general-info-cards>
                 <app-general-info-cards></app-general-info-cards>
@@ -76,17 +76,18 @@
             <div class="leaderboard">
                 <app-leader-board></app-leader-board>
             </div>
-            <div class="members" *ngIf="members!=undefined">
+            <div class="members" *ngIf="departs!=undefined">
                 <div class="center_button">
                     <button class="addmember_button" (click)="openAddMemberPopup();">Add Member</button>
                 </div>
-                <div class="members_container" *ngFor="let m of members">
-                    <app-member-card [member]="m"></app-member-card>
+                <div class="members_container">
+                    <ng-container *ngFor="let d of departs">
+                        <app-member-card *ngFor="let m of d.members" [member]="m" [depart]="d.nameDep"></app-member-card>
+                    </ng-container>
                 </div>
             </div>
         </div>
-        
-    </mat-sidenav-content>
-    
-</mat-sidenav-container>
 
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

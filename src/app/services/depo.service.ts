@@ -7,11 +7,15 @@ import { Depo } from '../models/Depo';
 @Injectable({
   providedIn: 'root'
 })
-export class DepoServiceService {
+export class DepoService {
   constructor(private bostagi:HttpClient){}
   depoUrl=environment.apiUrl+"/depo"
 
-  addWork(form:Depo):Observable<any>{
-    return this.bostagi.post<{ res: Depo; }>(this.depoUrl, form);
+  addWork(idmember:number,idtask:number,work:string):Observable<any>{
+    return this.bostagi.post<{ res: Depo; }>(`${this.depoUrl}/${idmember}/${idtask}`, work);
+  }
+
+  addNote(idDepo:number,note:number){
+    return this.bostagi.put<{res:Depo}>(`${this.depoUrl}/${idDepo}`, note)
   }
 }
